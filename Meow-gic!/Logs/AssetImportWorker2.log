@@ -313,3 +313,19 @@ Received Import Request.
 Start importing Assets/Enemies/Enemy Spritesheets/Worm_Move_Spritesheet.png using Guid(9c7d60d8cd6f544d29310b9e1d43c769) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5e6924c45e2e4147d6e2deb01f808d8') in 0.004788 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 143.217798 seconds.
+  path: Assets/Cat Wizard/3D
+  artifactKey: Guid(c971dcfc870544df68bdecfbdd9368ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cat Wizard/3D using Guid(c971dcfc870544df68bdecfbdd9368ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8eac4737f90c7330b6f0058ed6fc7679') in 0.003690 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 20.120280 seconds.
+  path: Assets/Cat Wizard/2D
+  artifactKey: Guid(ef52c2c3dab00491d96af2914bfa786c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cat Wizard/2D using Guid(ef52c2c3dab00491d96af2914bfa786c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '946c698aa53caf5977d6f03275231ff2') in 0.000401 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
