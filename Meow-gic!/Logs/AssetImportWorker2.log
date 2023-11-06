@@ -329,3 +329,19 @@ Received Import Request.
 Start importing Assets/Cat Wizard/2D using Guid(ef52c2c3dab00491d96af2914bfa786c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '946c698aa53caf5977d6f03275231ff2') in 0.000401 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1090.832696 seconds.
+  path: Assets/Cat Wizard/2D/Nyarlathotep Ichabod II.png
+  artifactKey: Guid(5bcc3f4873d5a40948e0ce6be7dc2613) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cat Wizard/2D/Nyarlathotep Ichabod II.png using Guid(5bcc3f4873d5a40948e0ce6be7dc2613) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16877bdc70367637ee79c9f7a65374c3') in 0.021829 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 11.719123 seconds.
+  path: Assets/Cat Wizard/2D/Spritesheets
+  artifactKey: Guid(00e33a2d2dc034b719c4e52fafb1f10e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cat Wizard/2D/Spritesheets using Guid(00e33a2d2dc034b719c4e52fafb1f10e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '860ee9a9ecfb3ef9e9fe3b38c1ee5fff') in 0.000428 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
