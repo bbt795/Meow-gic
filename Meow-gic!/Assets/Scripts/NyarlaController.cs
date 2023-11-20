@@ -48,6 +48,6 @@ public class PlayerController : MonoBehaviour
 
         }
         var velocity = new Vector2(lastDirection.x, lastDirection.y).normalized * speed;
-        myRig.velocity = new Vector2(velocity.x, myRig.velocity.y);
+        myRig.velocity = new Vector2(velocity.x, velocity.y);
     }
 }
