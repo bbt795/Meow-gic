@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
 
-public class PlayerController : MonoBehaviour
+public class Nyarla2DController : MonoBehaviour
 {
     public GameObject myTarget;
     public GameObject[] myTargets;
