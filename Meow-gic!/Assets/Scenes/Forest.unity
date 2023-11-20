@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 890341952}
   - component: {fileID: 890341954}
   m_Layer: 0
-  m_Name: Nyaralothep
+  m_Name: Nyarlathotep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
