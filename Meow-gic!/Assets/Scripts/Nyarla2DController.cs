@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
 
-public class Nyarla2DController : MonoBehaviour
+public class Nyarla2DController : Entity
 {
     public GameObject myTarget;
     public GameObject[] myTargets;
     public Animator myAnim;
     public SpriteRenderer myRenderer;
     public Rigidbody2D myRig;
-    public float speed = 5.0f;
+    //Entity float speed = 5.0f;
     public Vector2 lastDirection;
     // Start is called before the first frame update
     public void onMove(InputAction.CallbackContext ev)
