@@ -13,6 +13,7 @@ public class Nyarla2DController : Entity
     public Rigidbody2D myRig;
     //Entity float speed = 5.0f;
     public Vector2 lastDirection;
+    public GameObject starAttack;
     // Start is called before the first frame update
     public void onMove(InputAction.CallbackContext ev)
     {
@@ -25,6 +26,13 @@ public class Nyarla2DController : Entity
         {
             lastDirection = Vector2.zero;
             myAnim.SetInteger("DIR", 0);
+        }
+    }
+    public void onFire(InputAction.CallbackContext ev){
+        if(ev.started){
+            GameObject temp = GameObject.Instantiate(starAttack, this.transform.position + this.transform.forward*.75f, this.transform.rotation);
+            //Instantiate returns a type GameObject
+            temp.GetComponent<Rigidbody2D>().velocity = transform.forward*speed*2.0f; //bullet speed is double player speed
         }
     }
     void Start()
