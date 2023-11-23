@@ -32,16 +32,16 @@ public class Nyarla2DController : Entity
         if(ev.started){
             GameObject temp = GameObject.Instantiate(starAttack, this.transform.position + this.transform.forward*.75f, this.transform.rotation);
             if (Input.GetKeyDown(KeyCode.UpArrow)){
-                temp.GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 2.0f);
+                temp.GetComponent<Rigidbody2D>().velocity = Vector2.up*speed;
             }
             if (Input.GetKeyDown(KeyCode.LeftArrow)){
-                temp.GetComponent<Rigidbody2D>().velocity = new Vector2(2.0f, 0.0f);
+                temp.GetComponent<Rigidbody2D>().velocity = Vector2.left*speed;
             }
             if (Input.GetKeyDown(KeyCode.RightArrow)){
-                temp.GetComponent<Rigidbody2D>().velocity = new Vector2(-2.0f, 0.0f);
+                temp.GetComponent<Rigidbody2D>().velocity = Vector2.right*speed;
             }
             if (Input.GetKeyDown(KeyCode.DownArrow)){
-                temp.GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, -2.0f);
+                temp.GetComponent<Rigidbody2D>().velocity = Vector2.down*speed;
             }
             //Instantiate returns a type GameObject
             //temp.GetComponent<Rigidbody2D>().velocity = transform.forward*speed*2.0f; //bullet speed is double player speed
