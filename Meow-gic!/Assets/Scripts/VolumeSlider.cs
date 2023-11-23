@@ -11,6 +11,13 @@ public class VolumeSlider : MonoBehaviour
     public Slider slider;
     public GameObject textSliderValue;
 
+    void Awake()
+    {
+
+        DontDestroyOnLoad(this.gameObject);
+
+    }
+
     void Start()
     {
 
