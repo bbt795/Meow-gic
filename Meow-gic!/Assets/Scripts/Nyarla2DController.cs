@@ -31,8 +31,20 @@ public class Nyarla2DController : Entity
     public void onFire(InputAction.CallbackContext ev){
         if(ev.started){
             GameObject temp = GameObject.Instantiate(starAttack, this.transform.position + this.transform.forward*.75f, this.transform.rotation);
+            if (Input.GetKeyDown(KeyCode.UpArrow)){
+                temp.GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 2.0f);
+            }
+            if (Input.GetKeyDown(KeyCode.LeftArrow)){
+                temp.GetComponent<Rigidbody2D>().velocity = new Vector2(2.0f, 0.0f);
+            }
+            if (Input.GetKeyDown(KeyCode.RightArrow)){
+                temp.GetComponent<Rigidbody2D>().velocity = new Vector2(-2.0f, 0.0f);
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow)){
+                temp.GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, -2.0f);
+            }
             //Instantiate returns a type GameObject
-            temp.GetComponent<Rigidbody2D>().velocity = transform.forward*speed*2.0f; //bullet speed is double player speed
+            //temp.GetComponent<Rigidbody2D>().velocity = transform.forward*speed*2.0f; //bullet speed is double player speed
         }
     }
     void Start()
