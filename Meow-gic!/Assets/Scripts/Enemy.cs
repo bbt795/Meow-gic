@@ -8,10 +8,11 @@ public class Enemy : Entity
     public SpriteRenderer myRenderer;
     public Rigidbody2D myRig;
     public GameObject player;
-    public float speed = 5.0f;
+    public float speed = 4.0f;
     public float health;
     public float strength;
     public Vector2 presetDirection;
+    private Vector2 followDirection;
     public float distance;
     public bool followPlayer = false;
     // Start is called before the first frame update
@@ -33,13 +34,14 @@ public class Enemy : Entity
     void Update()
     {
         distance = Vector2.Distance(player.transform.position, myRig.transform.position);
-        var velocity = new Vector2(presetDirection.x, presetDirection.y).normalized * speed;
+        var velocity = new Vector2(followDirection.x, followDirection.y).normalized * speed;
         myRig.velocity = new Vector2(velocity.x, velocity.y);
-        if(distance < 5.0f){
-            presetDirection = player.transform.position;
+        if(distance < 4f){
+            followDirection = (player.transform.position - transform.position).normalized;
             followPlayer = true;
         }
         else{
+            followDirection = presetDirection;
             followPlayer = false;
         }
     }
