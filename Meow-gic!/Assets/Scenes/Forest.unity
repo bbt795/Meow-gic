@@ -828,10 +828,13 @@ MonoBehaviour:
   myAnim: {fileID: 0}
   myRenderer: {fileID: 0}
   myRig: {fileID: 0}
-  speed: 5
+  player: {fileID: 0}
+  speed: 3
   health: 0
   strength: 0
   presetDirection: {x: 1, y: 0}
+  distance: 0
+  followPlayer: 0
 --- !u!1001 &2189212457181116730
 PrefabInstance:
   m_ObjectHideFlags: 0
