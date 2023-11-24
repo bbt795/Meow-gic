@@ -7,7 +7,9 @@ public class Enemy : Entity
     public Animator myAnim;
     public SpriteRenderer myRenderer;
     public Rigidbody2D myRig;
-    //Entity float speed = 5.0f;
+    public float speed = 5.0f;
+    public float health;
+    public float strength;
     public Vector2 lastDirection;
     // Start is called before the first frame update
     void Start()
@@ -17,7 +19,7 @@ public class Enemy : Entity
         myRig = this.GetComponent<Rigidbody2D>();
     }
 
-    // OnCollisionEnter2D(Collider2D other){
+    // public void OnCollisionEnter2D(Collision2D other){
     //     if(other.tag == "Wall"){
     //         myRig.velocity = myRig.velocity * -1;
     //     }

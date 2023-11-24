@@ -11,7 +11,9 @@ public class Nyarla2DController : Entity
     public Animator myAnim;
     public SpriteRenderer myRenderer;
     public Rigidbody2D myRig;
-    //Entity float speed = 5.0f;
+    public float speed = 5.0f;
+    public float health;
+    public float strength;
     public Vector2 lastDirection;
     public GameObject starAttack;
     // Start is called before the first frame update
@@ -42,8 +44,6 @@ public class Nyarla2DController : Entity
             if (Input.GetKeyDown(KeyCode.DownArrow)){
                 InstantiatePrefab(Vector2.down);
             }
-            //Instantiate returns a type GameObject
-            //temp.GetComponent<Rigidbody2D>().velocity = transform.forward*speed*2.0f; //bullet speed is double player speed
         }
     }
     void InstantiatePrefab(Vector2 direction){
