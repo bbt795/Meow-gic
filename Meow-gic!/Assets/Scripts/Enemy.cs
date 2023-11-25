@@ -28,6 +28,10 @@ public class Enemy : Entity
         if(other.gameObject.CompareTag("Wall") && followPlayer == false){
             presetDirection *= -1;
         }
+        if(other.gameObject.CompareTag("Projectile")){
+            public GameObject otherObject = other.gameObject.GetComponent<GameObject>();
+            health -= otherObject.strength;
+        }
     }
 
     // Update is called once per frame
@@ -43,6 +47,9 @@ public class Enemy : Entity
         else{
             followDirection = presetDirection;
             followPlayer = false;
+        }
+        if(health<=0){
+            Destroy(this.gameObject);
         }
     }
 }

@@ -5,13 +5,14 @@ using UnityEngine.InputSystem;
 
 public class Projectile : MonoBehaviour
 {
+    public int strength = 1;
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    private void OnCollisionEnter2D(Collision2D other){
+    public void OnCollisionEnter2D(Collision2D other){
         Destroy(this.gameObject);
     }
 
