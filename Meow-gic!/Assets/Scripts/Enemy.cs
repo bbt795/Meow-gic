@@ -8,7 +8,7 @@ public class Enemy : Entity
     public SpriteRenderer myRenderer;
     public Rigidbody2D myRig;
     public GameObject player;
-    public float speed = 4.0f;
+    public float speed;
     public float health;
     public float strength;
     public Vector2 presetDirection;
