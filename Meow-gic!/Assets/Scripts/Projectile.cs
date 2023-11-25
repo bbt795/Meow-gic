@@ -21,4 +21,12 @@ public class Projectile : MonoBehaviour
     {
         
     }
+
+    public int GetStrength()
+    {
+
+        return strength;
+
+    }
+
 }
