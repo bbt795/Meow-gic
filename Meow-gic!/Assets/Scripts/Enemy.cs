@@ -15,7 +15,7 @@ public class Enemy : Entity
     private Vector2 followDirection;
     public float distance;
     public bool followPlayer = false;
-
+    public GameObject gold;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +49,8 @@ public class Enemy : Entity
     }
 
     void CreateCoins(){
-        
+        GameObject temp = GameObject.Instantiate(gold, transform.position, Quaternion.identity);
+        temp.GetComponent<Coins>().value = maxHealth/2;
     } 
 
 
@@ -72,6 +73,7 @@ public class Enemy : Entity
         }
         if(health<=0)
         {
+            CreateCoins();
             Destroy(this.gameObject);
         }
     }

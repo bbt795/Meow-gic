@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Coins : MonoBehaviour
 {
-    public float value = 5;
+    public float value;
     public Rigidbody2D myRig;
     public GameObject player;
     // Start is called before the first frame update
