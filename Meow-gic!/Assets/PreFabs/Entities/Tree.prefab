@@ -204,3 +204,4 @@ MonoBehaviour:
   distance: 0
   followPlayer: 0
   gold: {fileID: 4495029129993442321, guid: 9df25d9b8ebcd42d39bbd86c7eaf6ac0, type: 3}
+  potion: {fileID: 3783613103235367020, guid: 3068c21d03a3a4e21a337285bbd76277, type: 3}

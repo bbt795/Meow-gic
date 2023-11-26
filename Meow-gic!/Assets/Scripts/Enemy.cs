@@ -16,6 +16,7 @@ public class Enemy : Entity
     public float distance;
     public bool followPlayer = false;
     public GameObject gold;
+    public GameObject potion;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +54,13 @@ public class Enemy : Entity
         temp.GetComponent<Coins>().value = maxHealth/2;
     } 
 
+    void CreatePotions(){
+        int randVal = Random.Range(1, 11);
+        if(randVal < maxHealth){
+            GameObject temp = GameObject.Instantiate(potion, transform.position, Quaternion.identity);
+        }
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -74,6 +82,7 @@ public class Enemy : Entity
         if(health<=0)
         {
             CreateCoins();
+            CreatePotions();
             Destroy(this.gameObject);
         }
     }
