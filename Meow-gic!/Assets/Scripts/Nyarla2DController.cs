@@ -12,7 +12,8 @@ public class Nyarla2DController : Entity
     public SpriteRenderer myRenderer;
     public Rigidbody2D myRig;
     public float speed = 5.0f;
-    public float health;
+    public float health = 5;
+    public float maxHealth;
     public float strength;
     public float wealth;
     public Vector2 lastDirection;
@@ -57,6 +58,7 @@ public class Nyarla2DController : Entity
         myAnim = this.GetComponent<Animator>();
         myRenderer = this.GetComponent<SpriteRenderer>();
         myRig = this.GetComponent<Rigidbody2D>();
+        maxHealth = health;
     }
 
     private void OnTriggerEnter2D(Collider2D other){
@@ -64,6 +66,12 @@ public class Nyarla2DController : Entity
             Coins otherObject = other.gameObject.GetComponent<Coins>();
             wealth += otherObject.value;
             Debug.Log(wealth);
+            Destroy(otherObject.gameObject);
+        }
+        if(other.tag == "Health"){
+            HealthPotions otherObject = other.gameObject.GetComponent<HealthPotions>();
+            health = maxHealth;
+            Debug.Log(health);
             Destroy(otherObject.gameObject);
         }
     }
