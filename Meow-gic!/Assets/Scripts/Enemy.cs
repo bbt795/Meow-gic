@@ -44,7 +44,6 @@ public class Enemy : Entity
 
             Projectile otherObject = other.gameObject.GetComponent<Projectile>();
             health -= otherObject.GetStrength();
-            Debug.Log(health);
 
         } 
     }

@@ -39,8 +39,10 @@ public class VolumeSlider : MonoBehaviour
 
     void Update()
     {
-
-        textSliderValue.GetComponent<TextMeshProUGUI>().SetText("Volume: " + Mathf.Round(slider.value * 100));
+        if (textSliderValue != null)
+        {
+            textSliderValue.GetComponent<TextMeshProUGUI>().SetText("Volume: " + Mathf.Round(slider.value * 100));
+        }
         slider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
         volume = slider.value;
 
