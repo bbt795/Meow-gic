@@ -10,6 +10,7 @@ public class Enemy : Entity
     public GameObject player;
     public float speed;
     public float health = 5;
+    public float maxHealth;
     public Vector2 presetDirection;
     private Vector2 followDirection;
     public float distance;
@@ -23,6 +24,7 @@ public class Enemy : Entity
         myRenderer = this.GetComponent<SpriteRenderer>();
         myRig = this.GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
+        maxHealth = health;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -46,7 +48,9 @@ public class Enemy : Entity
         } 
     }
 
-            
+    void CreateCoins(){
+        
+    } 
 
 
     // Update is called once per frame

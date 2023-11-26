@@ -14,6 +14,7 @@ public class Nyarla2DController : Entity
     public float speed = 5.0f;
     public float health;
     public float strength;
+    public float wealth;
     public Vector2 lastDirection;
     public GameObject starAttack;
     // Start is called before the first frame update
@@ -33,20 +34,20 @@ public class Nyarla2DController : Entity
     public void onFire(InputAction.CallbackContext ev){
         if(ev.started){
             if (Input.GetKeyDown(KeyCode.UpArrow)){
-                InstantiatePrefab(Vector2.up);  
+                CreateStarAttack(Vector2.up);  
             }
             if (Input.GetKeyDown(KeyCode.LeftArrow)){
-                InstantiatePrefab(Vector2.left);
+                CreateStarAttack(Vector2.left);
             }
             if (Input.GetKeyDown(KeyCode.RightArrow)){
-                InstantiatePrefab(Vector2.right);
+                CreateStarAttack(Vector2.right);
             }
             if (Input.GetKeyDown(KeyCode.DownArrow)){
-                InstantiatePrefab(Vector2.down);
+                CreateStarAttack(Vector2.down);
             }
         }
     }
-    void InstantiatePrefab(Vector2 direction){
+    void CreateStarAttack(Vector2 direction){
         Vector3 spawnPosition = transform.position + new Vector3(direction.x, direction.y, 0);
         GameObject temp = GameObject.Instantiate(starAttack, spawnPosition, Quaternion.identity);
         temp.GetComponent<Rigidbody2D>().velocity = direction*speed*1.2f;
@@ -56,6 +57,15 @@ public class Nyarla2DController : Entity
         myAnim = this.GetComponent<Animator>();
         myRenderer = this.GetComponent<SpriteRenderer>();
         myRig = this.GetComponent<Rigidbody2D>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other){
+        if(other.tag == "Gold"){
+            Coins otherObject = other.gameObject.GetComponent<Coins>();
+            wealth += otherObject.value;
+            Debug.Log(wealth);
+            Destroy(otherObject.gameObject);
+        }
     }
 
     // Update is called once per frame
