@@ -8,6 +8,7 @@ TagManager:
   - Door
   - Projectile
   - Gold
+  - Health
   layers:
   - Default
   - TransparentFX
