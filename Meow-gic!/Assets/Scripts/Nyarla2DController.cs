@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
+using TMPro;
 
 public class Nyarla2DController : Entity
 {
@@ -12,10 +14,14 @@ public class Nyarla2DController : Entity
     public SpriteRenderer myRenderer;
     public Rigidbody2D myRig;
     public float speed = 5.0f;
-    public float health = 5;
+    public float health = 10;
     public float maxHealth;
     public float strength;
     public float wealth;
+    public GameObject healthDisplay;
+    public TextMeshProUGUI healthDisplayText;
+    public GameObject goldDisplay;
+    public TextMeshProUGUI goldDisplayText;
     public Vector2 lastDirection;
     public GameObject starAttack;
     // Start is called before the first frame update
@@ -59,6 +65,8 @@ public class Nyarla2DController : Entity
         myRenderer = this.GetComponent<SpriteRenderer>();
         myRig = this.GetComponent<Rigidbody2D>();
         maxHealth = health;
+        healthDisplayText = healthDisplay.GetComponent<TextMeshProUGUI>();
+        goldDisplayText = goldDisplay.GetComponent<TextMeshProUGUI>();
     }
 
     private void OnTriggerEnter2D(Collider2D other){
@@ -91,5 +99,7 @@ public class Nyarla2DController : Entity
         }
         var velocity = new Vector2(lastDirection.x, lastDirection.y).normalized * speed;
         myRig.velocity = new Vector2(velocity.x, velocity.y);
+        healthDisplayText.text = "Health: " + health;
+        goldDisplayText.text = "Gold: " + wealth;
     }
 }
