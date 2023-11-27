@@ -11,6 +11,7 @@ public class Enemy : Entity
     public float speed;
     public float health = 5;
     public float maxHealth;
+    public float strength = 1;
     public Vector2 presetDirection;
     private Vector2 followDirection;
     public float distance;
@@ -46,6 +47,11 @@ public class Enemy : Entity
             health -= otherObject.GetStrength();
 
         } 
+
+        if(other.gameObject.CompareTag("Player")){
+            Nyarla2DController otherObject = other.gameObject.GetComponent<Nyarla2DController>();
+            otherObject.health -= strength;
+        }
     }
 
     void CreateCoins(){

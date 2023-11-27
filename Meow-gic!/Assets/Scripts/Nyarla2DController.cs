@@ -14,10 +14,11 @@ public class Nyarla2DController : Entity
     public SpriteRenderer myRenderer;
     public Rigidbody2D myRig;
     public float speed = 5.0f;
-    public float health = 10;
+    public float health = 10f;
     public float maxHealth;
     public float strength;
     public float wealth;
+    public float lives = 9f;
     public GameObject healthDisplay;
     public TextMeshProUGUI healthDisplayText;
     public GameObject goldDisplay;
@@ -97,6 +98,14 @@ public class Nyarla2DController : Entity
             }
 
         }
+        if(health <= 0 && lives != 0){
+            lives -= 1;
+            //Change scene to village, transfer information about lives and gold
+        }
+        else if (health <= 0 && lives <= 0){
+            //End game/bring player back to home screen/exit game
+        }
+        
         var velocity = new Vector2(lastDirection.x, lastDirection.y).normalized * speed;
         myRig.velocity = new Vector2(velocity.x, velocity.y);
         healthDisplayText.text = "Health: " + health;
