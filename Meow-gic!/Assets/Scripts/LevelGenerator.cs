@@ -10,6 +10,7 @@ public class LevelGenerator : MonoBehaviour
     public float structureSpacing = 30f; // Spacing between structures
     // Start is called before the first frame update
     public GameObject initialPrefab;
+    public GameObject bossLevel;
     void Start()
     {
         initialPrefab = levelPrefabs[Random.Range(0, levelPrefabs.Length)];
@@ -18,7 +19,7 @@ public class LevelGenerator : MonoBehaviour
 
     void GenerateLevel(){
 
-        Instantiate(initialPrefab, new Vector3(0f, 0f, 0f), Quaternion.identity, transform);
+        Instantiate(initialPrefab, new Vector2(0f, 0f), Quaternion.identity, transform);
 
         for (int i = 0; i < numberOfStructures; i++)
         {

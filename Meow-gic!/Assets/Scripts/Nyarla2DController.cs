@@ -18,14 +18,15 @@ public class Nyarla2DController : Entity
     public float health = 10f;
     public float maxHealth;
     public float strength;
-    public float wealth;
-    public float lives = 9f;
     public GameObject healthDisplay;
     public TextMeshProUGUI healthDisplayText;
     public GameObject goldDisplay;
     public TextMeshProUGUI goldDisplayText;
-    public Vector2 lastDirection;
+    public GameObject livesDisplay;
+    public TextMeshProUGUI livesDisplayText;
+    public GameObject gameManager;
     public GameObject starAttack;
+    public Vector2 lastDirection;
     public string villageScene;
     // Start is called before the first frame update
     public void onMove(InputAction.CallbackContext ev)
@@ -70,13 +71,14 @@ public class Nyarla2DController : Entity
         maxHealth = health;
         healthDisplayText = healthDisplay.GetComponent<TextMeshProUGUI>();
         goldDisplayText = goldDisplay.GetComponent<TextMeshProUGUI>();
+        livesDisplayText = livesDisplay.GetComponent<TextMeshProUGUI>();
     }
 
     private void OnTriggerEnter2D(Collider2D other){
         if(other.tag == "Gold"){
             Coins otherObject = other.gameObject.GetComponent<Coins>();
-            wealth += otherObject.value;
-            Debug.Log(wealth);
+            gameManager.GetComponent<DoNotDestroy>().gold += otherObject.value;
+            Debug.Log(gameManager.GetComponent<DoNotDestroy>().gold);
             Destroy(otherObject.gameObject);
         }
         if(other.tag == "Health"){
@@ -100,18 +102,18 @@ public class Nyarla2DController : Entity
             }
 
         }
-        if(health <= 0 && lives != 0){
-            lives -= 1;
+        if(health <= 0 && gameManager.GetComponent<DoNotDestroy>().lives != 0){
+            gameManager.GetComponent<DoNotDestroy>().lives -= 1;
             SceneManager.LoadScene(villageScene);
             //Change scene to village, transfer information about lives and gold
         }
-        else if (health <= 0 && lives <= 0){
+        else if (health <= 0 && gameManager.GetComponent<DoNotDestroy>().lives <= 0){
             //End game/bring player back to home screen/exit game
         }
         
         var velocity = new Vector2(lastDirection.x, lastDirection.y).normalized * speed;
         myRig.velocity = new Vector2(velocity.x, velocity.y);
         healthDisplayText.text = "Health: " + health;
-        goldDisplayText.text = "Gold: " + wealth;
+        goldDisplayText.text = "Gold: " + gameManager.GetComponent<DoNotDestroy>().gold;
     }
 }
