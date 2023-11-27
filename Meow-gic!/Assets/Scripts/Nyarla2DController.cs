@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Nyarla2DController : Entity
 {
@@ -25,6 +26,7 @@ public class Nyarla2DController : Entity
     public TextMeshProUGUI goldDisplayText;
     public Vector2 lastDirection;
     public GameObject starAttack;
+    public string villageScene;
     // Start is called before the first frame update
     public void onMove(InputAction.CallbackContext ev)
     {
@@ -100,6 +102,7 @@ public class Nyarla2DController : Entity
         }
         if(health <= 0 && lives != 0){
             lives -= 1;
+            SceneManager.LoadScene(villageScene);
             //Change scene to village, transfer information about lives and gold
         }
         else if (health <= 0 && lives <= 0){

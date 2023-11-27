@@ -306,7 +306,15 @@ MonoBehaviour:
   myRenderer: {fileID: 0}
   myRig: {fileID: 0}
   speed: 5
-  health: 0
+  health: 10
+  maxHealth: 0
   strength: 0
+  wealth: 0
+  lives: 9
+  healthDisplay: {fileID: 0}
+  healthDisplayText: {fileID: 0}
+  goldDisplay: {fileID: 0}
+  goldDisplayText: {fileID: 0}
   lastDirection: {x: 0, y: 0}
   starAttack: {fileID: 852247486131797942, guid: c6b6894b882e34652b4c2ded69d27d3a, type: 3}
+  villageScene: Village
