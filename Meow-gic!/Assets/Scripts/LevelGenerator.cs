@@ -10,7 +10,7 @@ public class LevelGenerator : MonoBehaviour
     private List<GameObject> instantiatedPrefabs = new List<GameObject>();
     public int rows = 3; // Number of rows in the level
     public int columns = 4; // Number of columns in the level
-    public float horizontalSpacing = 35f; // Horizontal spacing between prefabs
+    public float horizontalSpacing = 40f; // Horizontal spacing between prefabs
     public float verticalSpacing = 23f; 
     public GameObject bossLevel;
     void Start()

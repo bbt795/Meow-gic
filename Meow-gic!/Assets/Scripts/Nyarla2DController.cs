@@ -14,7 +14,8 @@ public class Nyarla2DController : Entity
     public Animator myAnim;
     public SpriteRenderer myRenderer;
     public Rigidbody2D myRig;
-    public float teleportSpacing = 11f; 
+    public float teleportUpDown = 11f; 
+    public float teleportLeftRight = 16f;
     public float speed = 5.0f;
     public float health = 10f;
     public float maxHealth;
@@ -92,16 +93,16 @@ public class Nyarla2DController : Entity
 
     private void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.name == "DoorTop"){
-            myRig.transform.position += new Vector3(0f, teleportSpacing, 0f);
+            myRig.transform.position += new Vector3(0f, teleportUpDown, 0f);
         }
         if(other.gameObject.name == "DoorLeft"){
-            myRig.transform.position += new Vector3(-teleportSpacing, 0f, 0f);
+            myRig.transform.position += new Vector3(-teleportLeftRight, 0f, 0f);
         }
         if(other.gameObject.name == "DoorRight"){
-            myRig.transform.position += new Vector3(teleportSpacing, 0f, 0f);
+            myRig.transform.position += new Vector3(teleportLeftRight, 0f, 0f);
         }
         if(other.gameObject.name == "DoorBottom"){
-            myRig.transform.position += new Vector3(0f, -teleportSpacing, 0f);
+            myRig.transform.position += new Vector3(0f, -teleportUpDown, 0f);
         }
     }
 
