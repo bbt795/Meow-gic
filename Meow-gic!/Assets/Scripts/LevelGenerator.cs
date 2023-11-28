@@ -16,7 +16,7 @@ public class LevelGenerator : MonoBehaviour
     void Start()
     {
         GenerateLevel();
-        UpdateDoorsAfterPrefabInstantiation();
+        //UpdateDoorsAfterPrefabInstantiation();
     }
 
     void GenerateLevel(){
@@ -29,7 +29,17 @@ public class LevelGenerator : MonoBehaviour
                     // Instantiate a specific prefab for the top-right spot
                     float xPos = col * horizontalSpacing;
                     float yPos = row * verticalSpacing;
-                    Instantiate(bossLevel, new Vector3(xPos, yPos, 0f), Quaternion.identity);
+                    GameObject obj = Instantiate(bossLevel, new Vector3(xPos, yPos, 0f), Quaternion.identity);
+
+                    Tilemap doorTop = obj.transform.GetChild(3).GetComponent<Tilemap>();
+                    Tilemap doorRight = obj.transform.Find("DoorRight").GetComponent<Tilemap>();
+
+                    // doorTop.GetComponent<TilemapRenderer>().enabled=false;
+                    // doorRight.GetComponent<TilemapRenderer>().enabled=false;
+
+                    //doorTop.GetComponent<TilemapCollider2D>().enabled=false;
+                    //doorRight.GetComponent<TilemapCollider2D>().enabled=false;
+                    
                 }
                 else {
                     // Randomly choose a prefab from the array
@@ -41,6 +51,24 @@ public class LevelGenerator : MonoBehaviour
 
                     // Instantiate the prefab at the calculated position
                     GameObject obj = Instantiate(prefab, new Vector3(xPos, yPos, 0f), Quaternion.identity);
+
+                    Tilemap doorTop = obj.transform.GetChild(3).GetComponent<Tilemap>();
+                    Tilemap doorLeft = obj.transform.GetChild(4).GetComponent<Tilemap>();
+                    Tilemap doorRight = obj.transform.GetChild(5).GetComponent<Tilemap>();
+                    Tilemap doorBottom = obj.transform.GetChild(6).GetComponent<Tilemap>();
+
+                    if(row == 0){
+                        doorBottom.GetComponent<TilemapRenderer>().enabled=false;
+                    }
+                    if(row == rows - 1){
+                        doorTop.GetComponent<TilemapRenderer>().enabled=false;
+                    }
+                    if(col == 0){
+                        doorLeft.GetComponent<TilemapRenderer>().enabled=false;
+                    }
+                    if(col == columns - 1){
+                        doorBottom.GetComponent<TilemapRenderer>().enabled=false;
+                    }
                 
                     // Make sure the instantiated object is in the same Z-plane as the Level Generator
                     obj.transform.SetParent(transform);
