@@ -63,7 +63,7 @@ public class Nyarla2DController : Entity
     void CreateStarAttack(Vector2 direction){
         Vector3 spawnPosition = transform.position + new Vector3(direction.x, direction.y, 0);
         GameObject temp = GameObject.Instantiate(starAttack, spawnPosition, Quaternion.identity);
-        temp.GetComponent<Rigidbody2D>().velocity = direction*speed*1.2f;
+        temp.GetComponent<Rigidbody2D>().velocity = direction*speed*2f;
     }
     void Start()
     {
