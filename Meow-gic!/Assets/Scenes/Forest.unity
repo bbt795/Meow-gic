@@ -629,7 +629,7 @@ MonoBehaviour:
   columns: 4
   horizontalSpacing: 40
   verticalSpacing: 23
-  initalRoom: {fileID: 7059346640962279308, guid: 2e3b6b93702034f3eae925a3efabea73, type: 3}
+  initalRoom: {fileID: 5602563726813454702, guid: d35e94edcf4064efebc6d7be920b7ed7, type: 3}
   bossLevel: {fileID: 5661687012346213349, guid: 27af7029a58ea8d4ca40129c9b6660ce, type: 3}
 --- !u!4 &485045630
 Transform:
