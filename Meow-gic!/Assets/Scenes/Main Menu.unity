@@ -2034,7 +2034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce77a7801c2d9f4cb46579aa13561e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newGameScene: Forest
+  newGameScene: Village
   mainPanel: {fileID: 2113028401}
   settingsPanel: {fileID: 158451016}
   instructionsPanel: {fileID: 1797661300}

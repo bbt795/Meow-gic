@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Nyarla3DController : MonoBehaviour
 {
@@ -53,8 +54,8 @@ public class Nyarla3DController : MonoBehaviour
     {
         
         if(collision.transform.gameObject.CompareTag("StartCave")) {
-        
-            
+
+            SceneManager.LoadScene("Forest");
         
         }
 
