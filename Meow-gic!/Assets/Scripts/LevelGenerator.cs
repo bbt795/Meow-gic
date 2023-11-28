@@ -76,7 +76,7 @@ public class LevelGenerator : MonoBehaviour
             if (hit.collider == null)
             {
                 // No object to the left, hide the left door
-                HideDoor(prefab, "DoorLeft");
+                HideDoor(prefab, 4);
             }
         }
 
@@ -91,7 +91,7 @@ public class LevelGenerator : MonoBehaviour
             if (hit.collider == null)
             {
                 // No object to the right, hide the right door
-                HideDoor(prefab, "DoorRight");
+                HideDoor(prefab, 5);
             }
         }
 
@@ -106,7 +106,7 @@ public class LevelGenerator : MonoBehaviour
             if (hit.collider == null)
             {
                 // No object below, hide the bottom door
-                HideDoor(prefab, "DoorBottom");
+                HideDoor(prefab, 6);
             }
         }
 
@@ -121,14 +121,14 @@ public class LevelGenerator : MonoBehaviour
             if (hit.collider == null)
             {
                 // No object above, hide the top door
-                HideDoor(prefab, "DoorTop");
+                HideDoor(prefab, 3);
             }
         }
     }
 
-    void HideDoor(GameObject prefab, string name){
-        GameObject door = GameObject.Find(name);
-        door.GetComponent<Renderer>().enabled=false;
+    void HideDoor(GameObject prefab, int num){
+        Tilemap door = prefab.transform.GetChild(num).GetComponent<Tilemap>();
+        door.GetComponent<TilemapRenderer>().enabled=false;
         door.GetComponent<TilemapCollider2D>().enabled=false;
     }
 
