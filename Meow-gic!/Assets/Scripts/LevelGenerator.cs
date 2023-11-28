@@ -32,7 +32,7 @@ public class LevelGenerator : MonoBehaviour
                     GameObject obj = Instantiate(bossLevel, new Vector3(xPos, yPos, 0f), Quaternion.identity);
                     
                 }
-                if(row == 0 && col == 0){
+                else if(row == 0 && col == 0){
                     float xPos = col * horizontalSpacing;
                     float yPos = row * verticalSpacing;
                     GameObject obj = Instantiate(initalRoom, new Vector3(xPos, yPos, 0f), Quaternion.identity);
