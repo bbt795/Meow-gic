@@ -48,4 +48,16 @@ public class Nyarla3DController : MonoBehaviour
         myRig.angularVelocity = new Vector3(0, lastDirection.x, 0)*speed; 
         myRig.velocity = transform.forward*speed*lastDirection.y+new Vector3(0,myRig.velocity.y,0);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+        if(collision.transform.gameObject.CompareTag("StartCave")) {
+        
+            
+        
+        }
+
+    }
+
 }
