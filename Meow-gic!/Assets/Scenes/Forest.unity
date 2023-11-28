@@ -586,7 +586,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &485045629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,9 +605,9 @@ MonoBehaviour:
   - {fileID: 2995005732184180785, guid: 88df54322e0d3b945b5837f16f444b91, type: 3}
   - {fileID: 2159895274064201056, guid: 53aa8717f0180a444b30808b83210e94, type: 3}
   - {fileID: 1869458609119699125, guid: 3038add7de29b274b9ccc67855522014, type: 3}
-  numberOfStructures: 10
-  structureSpacing: 30
   initialPrefab: {fileID: 0}
+  maxBranches: 3
+  maxBranchLength: 2
   bossLevel: {fileID: 0}
 --- !u!4 &485045630
 Transform:
@@ -1178,7 +1178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1869458609119699125, guid: 3038add7de29b274b9ccc67855522014, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2619202846180342896, guid: 3038add7de29b274b9ccc67855522014, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.data[0].x

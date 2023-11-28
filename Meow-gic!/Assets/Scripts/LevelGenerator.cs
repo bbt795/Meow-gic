@@ -6,37 +6,48 @@ using UnityEngine.InputSystem;
 public class LevelGenerator : MonoBehaviour
 {
     public GameObject[] levelPrefabs; // Array of prebuilt level structures
-    public int numberOfStructures = 2; // Number of structures to generate
+    //public int numberOfStructures = 2; // Number of structures to generate
     //public float structureSpacing = 30f; // Spacing between structures
-    public float horizontalSpacing = 30f;
-    public float verticalSpacing = 18f;
+    //public float horizontalSpacing = 30f;
+    //public float verticalSpacing = 18f;
     public GameObject initialPrefab;
     public int maxBranches = 3;
-    public int maxBranchLength = 5;
+    public int maxBranchLength = 2;
     public GameObject bossLevel;
     void Start()
     {
         initialPrefab = levelPrefabs[Random.Range(0, levelPrefabs.Length)];
-        GenerateLevel();
+        Instantiate(initialPrefab, new Vector3(0f, 0f, 0f), Quaternion.identity, transform);
+        GenerateLevel(initialPrefab.transform.position, 0);
         //GenerateLevel(initialPrefab.transform.position, 0);
     }
 
-    void GenerateLevel(){
-        Instantiate(initialPrefab, new Vector3(0f, 0f, 0f), Quaternion.identity, transform);
+    void GenerateLevel(Vector2 position, int depth){
 
-        GameObject prefabToInstantiate = levelPrefabs[Random.Range(0, levelPrefabs.Length)];
+        if (depth >= maxBranchLength)
+        {
+            return;
+        }
 
-        Vector2 position = initialPrefab.transform.position;
+        Vector2[] offsetPositions = new Vector2[]
+        {
+            position + new Vector2(35f, 0f), //Right
+            position + new Vector2(-35f, 0f), //Left
+            position + new Vector2(0f, 23f), //Up
+            position + new Vector2(0f, -23f) //Down
+        };   
 
-        //Offsets around each Level
-        //Vector2 offset = new Vector2(35f, 0f); //Right
-        //Vector2 offset = new Vector2(-35f, 0f); //Left
-        //Vector2 offset = new Vector2(0f, 23f); //Up
-        //Vector2 offset = new Vector2(0f, -23f); //Down
+        for (int i = 0; i < Mathf.Min(maxBranches, offsetPositions.Length); i++)
+        {
+            // Instantiate a random prefab variant at the predefined position
+            GameObject randomPrefab = levelPrefabs[Random.Range(0, levelPrefabs.Length)];
+            GameObject newPrefab = Instantiate(randomPrefab, offsetPositions[i], Quaternion.identity);
 
-        position += offset;
+            // Recursively generate branches from the newly placed prefab
+            GenerateLevel(offsetPositions[i], depth + 1);
+        }   
 
-        GameObject obj = Instantiate(prefabToInstantiate, position, Quaternion.identity);
+        //GameObject obj = Instantiate(prefabToInstantiate, position, Quaternion.identity);
 
         // for (int i = 0; i < numberOfStructures; i++)
         // {
