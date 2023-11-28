@@ -34,12 +34,17 @@ public class LevelGenerator : MonoBehaviour
 
         for (int i = 0; i < Mathf.Min(maxBranches, offsetPositions.Length); i++)
         {
-            // Instantiate a random prefab variant at the predefined position
-            GameObject randomPrefab = levelPrefabs[Random.Range(0, levelPrefabs.Length)];
-            GameObject newPrefab = Instantiate(randomPrefab, offsetPositions[i], Quaternion.identity);
+            bool collisionDetected = Physics2D.OverlapCircle(offsetPositions[i], 0.1f);
 
-            // Recursively generate branches from the newly placed prefab
-            GenerateLevel(offsetPositions[i], depth + 1);
+            if(!collisionDetected){
+                // Instantiate a random prefab variant at the predefined position
+                int randSet = Random.Range(0, 4);
+                GameObject randomPrefab = levelPrefabs[Random.Range(0, levelPrefabs.Length)];
+                GameObject newPrefab = Instantiate(randomPrefab, offsetPositions[i], Quaternion.identity);
+
+                // Recursively generate branches from the newly placed prefab
+                GenerateLevel(offsetPositions[i], depth + 1);
+            }
         }   
     }
 
