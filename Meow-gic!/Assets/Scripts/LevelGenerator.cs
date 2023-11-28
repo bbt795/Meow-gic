@@ -16,7 +16,6 @@ public class LevelGenerator : MonoBehaviour
     void Start()
     {
         GenerateLevel();
-        //UpdateDoorsAfterPrefabInstantiation();
     }
 
     void GenerateLevel(){
@@ -77,87 +76,6 @@ public class LevelGenerator : MonoBehaviour
                 } 
             }
         }
-    }
-
-    void UpdateDoorsAfterPrefabInstantiation()
-    {
-        foreach (GameObject prefab in instantiatedPrefabs)
-        {
-            // Get the position of the prefab in the array
-            int prefabRow = Mathf.RoundToInt(prefab.transform.position.y / verticalSpacing);
-            int prefabCol = Mathf.RoundToInt(prefab.transform.position.x / horizontalSpacing);
-
-            // Check for adjacent prefabs and hide corresponding doors
-            CheckAndHideDoors(prefabRow, prefabCol, prefab);
-        }
-    }
-
-    void CheckAndHideDoors(int row, int col, GameObject prefab)
-    {
-        if (col > 0)
-        {
-            Vector2 rayOrigin = new Vector2((col - 1) * horizontalSpacing, row * verticalSpacing);
-
-            // Cast a ray to the left
-            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.left, horizontalSpacing);
-
-            if (hit.collider == null)
-            {
-                // No object to the left, hide the left door
-                HideDoor(prefab, 4);
-            }
-        }
-
-        // Check right
-        if (col < columns - 1)
-        {
-            Vector2 rayOrigin = new Vector2((col + 1) * horizontalSpacing, row * verticalSpacing);
-
-            // Cast a ray to the right
-            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right, horizontalSpacing);
-
-            if (hit.collider == null)
-            {
-                // No object to the right, hide the right door
-                HideDoor(prefab, 5);
-            }
-        }
-
-        // Check below
-        if (row > 0)
-        {
-            Vector2 rayOrigin = new Vector2(col * horizontalSpacing, (row - 1) * verticalSpacing);
-
-            // Cast a ray downwards
-            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, verticalSpacing);
-
-            if (hit.collider == null)
-            {
-                // No object below, hide the bottom door
-                HideDoor(prefab, 6);
-            }
-        }
-
-        // Check above
-        if (row < rows - 1)
-        {
-            Vector2 rayOrigin = new Vector2(col * horizontalSpacing, (row + 1) * verticalSpacing);
-
-            // Cast a ray upwards
-            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up, verticalSpacing);
-
-            if (hit.collider == null)
-            {
-                // No object above, hide the top door
-                HideDoor(prefab, 3);
-            }
-        }
-    }
-
-    void HideDoor(GameObject prefab, int num){
-        Tilemap door = prefab.transform.GetChild(num).GetComponent<Tilemap>();
-        door.GetComponent<TilemapRenderer>().enabled=false;
-        door.GetComponent<TilemapCollider2D>().enabled=false;
     }
 
     // Update is called once per frame
