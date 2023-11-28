@@ -132,5 +132,6 @@ public class Nyarla2DController : Entity
         myRig.velocity = new Vector2(velocity.x, velocity.y);
         healthDisplayText.text = "Health: " + health;
         goldDisplayText.text = "Gold: " + gameManager.GetComponent<DoNotDestroy>().gold;
+        livesDisplayText.text = "Lives: " + gameManager.GetComponent<DoNotDestroy>().lives;
     }
 }
