@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 public class LevelGenerator : MonoBehaviour
 {
     public GameObject[] levelPrefabs; // Array of prebuilt level structures
-    public int rows = 5; // Number of rows in the level
-    public int columns = 5; // Number of columns in the level
+    public int rows = 3; // Number of rows in the level
+    public int columns = 4; // Number of columns in the level
     public float horizontalSpacing = 32f; // Horizontal spacing between prefabs
     public float verticalSpacing = 23f; 
     public GameObject bossLevel;
