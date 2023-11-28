@@ -56,7 +56,7 @@ public class Enemy : Entity
 
     void CreateCoins(){
         GameObject temp = GameObject.Instantiate(gold, transform.position, Quaternion.identity);
-        temp.GetComponent<Coins>().value = maxHealth/2;
+        temp.GetComponent<Coins>().value = Mathf.Ceil(maxHealth/2);
     } 
 
     void CreatePotions(){
