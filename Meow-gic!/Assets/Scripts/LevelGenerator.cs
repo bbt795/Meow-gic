@@ -12,6 +12,7 @@ public class LevelGenerator : MonoBehaviour
     public int columns = 4; // Number of columns in the level
     public float horizontalSpacing = 40f; // Horizontal spacing between prefabs
     public float verticalSpacing = 23f; 
+    public GameObject initalRoom;
     public GameObject bossLevel;
     void Start()
     {
@@ -30,6 +31,20 @@ public class LevelGenerator : MonoBehaviour
                     float yPos = row * verticalSpacing;
                     GameObject obj = Instantiate(bossLevel, new Vector3(xPos, yPos, 0f), Quaternion.identity);
                     
+                }
+                if(row == 0 && col == 0){
+                    float xPos = col * horizontalSpacing;
+                    float yPos = row * verticalSpacing;
+                    GameObject obj = Instantiate(initalRoom, new Vector3(xPos, yPos, 0f), Quaternion.identity);
+
+                    Tilemap doorLeft = obj.transform.GetChild(4).GetComponent<Tilemap>();
+                    Tilemap doorBottom = obj.transform.GetChild(6).GetComponent<Tilemap>();
+
+                    doorLeft.GetComponent<TilemapRenderer>().enabled=false;
+                    doorLeft.GetComponent<TilemapCollider2D>().enabled=false;
+
+                    doorBottom.GetComponent<TilemapRenderer>().enabled=false;
+                    doorBottom.GetComponent<TilemapCollider2D>().enabled=false;
                 }
                 else {
                     // Randomly choose a prefab from the array
