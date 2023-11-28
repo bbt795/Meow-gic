@@ -24,8 +24,6 @@ public class Nyarla2DController : Entity
     public TextMeshProUGUI healthDisplayText;
     public GameObject goldDisplay;
     public TextMeshProUGUI goldDisplayText;
-    public GameObject livesDisplay;
-    public TextMeshProUGUI livesDisplayText;
     public GameObject gameManager;
     public GameObject starAttack;
     public Vector2 lastDirection;
@@ -73,7 +71,6 @@ public class Nyarla2DController : Entity
         maxHealth = health;
         healthDisplayText = healthDisplay.GetComponent<TextMeshProUGUI>();
         goldDisplayText = goldDisplay.GetComponent<TextMeshProUGUI>();
-        livesDisplayText = livesDisplay.GetComponent<TextMeshProUGUI>();
     }
 
     private void OnTriggerEnter2D(Collider2D other){
@@ -132,6 +129,5 @@ public class Nyarla2DController : Entity
         myRig.velocity = new Vector2(velocity.x, velocity.y);
         healthDisplayText.text = "Health: " + health;
         goldDisplayText.text = "Gold: " + gameManager.GetComponent<DoNotDestroy>().gold;
-        livesDisplayText.text = "Lives: " + gameManager.GetComponent<DoNotDestroy>().lives;
     }
 }
