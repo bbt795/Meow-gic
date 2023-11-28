@@ -605,10 +605,11 @@ MonoBehaviour:
   - {fileID: 2995005732184180785, guid: 88df54322e0d3b945b5837f16f444b91, type: 3}
   - {fileID: 2159895274064201056, guid: 53aa8717f0180a444b30808b83210e94, type: 3}
   - {fileID: 1869458609119699125, guid: 3038add7de29b274b9ccc67855522014, type: 3}
-  initialPrefab: {fileID: 0}
-  maxBranches: 3
-  maxBranchLength: 2
-  bossLevel: {fileID: 0}
+  rows: 5
+  columns: 5
+  horizontalSpacing: 32
+  verticalSpacing: 23
+  bossLevel: {fileID: 5661687012346213349, guid: 27af7029a58ea8d4ca40129c9b6660ce, type: 3}
 --- !u!4 &485045630
 Transform:
   m_ObjectHideFlags: 0
