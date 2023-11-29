@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 2081871484704458773}
   - component: {fileID: 5796258782891971865}
   - component: {fileID: 4524206797111020277}
+  - component: {fileID: 8742952874427652965}
   m_Layer: 0
   m_Name: Mr Axolotl
-  m_TagString: Untagged
+  m_TagString: Shopkeeper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,3 +122,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_camera: {fileID: 0}
   tran: {fileID: 1959155249692621402}
+--- !u!65 &8742952874427652965
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7671707073879949998}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 13.238495, y: 14.4377575, z: 0.2}
+  m_Center: {x: 1.0831451, y: -2.0096064, z: 0}
