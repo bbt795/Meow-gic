@@ -124,7 +124,7 @@ public class Nyarla2DController : Entity
 
             livesDisplay.transform.parent.transform.gameObject.SetActive(true);
 
-            yield return new WaitForSecondsRealtime(15);
+            StartCoroutine("Wait");
 
             SceneManager.LoadScene(villageScene);
             //Change scene to village, transfer information about lives and gold
@@ -139,4 +139,10 @@ public class Nyarla2DController : Entity
         goldDisplayText.text = "" + gameManager.GetComponent<DoNotDestroy>().gold;
         livesDisplay.text = "Lives Remaining: " + gameManager.GetComponent<DoNotDestroy>().lives;
     }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(15);
+    }
+
 }
