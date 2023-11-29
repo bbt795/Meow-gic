@@ -154,12 +154,15 @@ MonoBehaviour:
   player: {fileID: 0}
   speed: 2.5
   health: 0
-  maxHealth: 0
+  maxHealth: 15
+  strength: 2
   presetDirection: {x: 1, y: 0}
   distance: 0
   followPlayer: 0
   gold: {fileID: 4495029129993442321, guid: 9df25d9b8ebcd42d39bbd86c7eaf6ac0, type: 3}
   potion: {fileID: 3783613103235367020, guid: 3068c21d03a3a4e21a337285bbd76277, type: 3}
+  playerAttack: {fileID: 0}
+  fireRate: 2
 --- !u!61 &3000163285373946451
 BoxCollider2D:
   m_ObjectHideFlags: 0

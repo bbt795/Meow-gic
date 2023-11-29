@@ -9,9 +9,9 @@ public class Enemy : Entity
     public Rigidbody2D myRig;
     public GameObject player;
     public float speed;
-    public float health = 5;
+    public float health;
     public float maxHealth;
-    public int strength = 1;
+    public int strength;
     public Vector2 presetDirection;
     private Vector2 followDirection;
     public float distance;
@@ -43,7 +43,7 @@ public class Enemy : Entity
         myRenderer = this.GetComponent<SpriteRenderer>();
         myRig = this.GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
-        maxHealth = health;
+        health = maxHealth;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
