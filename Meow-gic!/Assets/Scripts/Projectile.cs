@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
     }
 
     public void OnCollisionEnter2D(Collision2D other){
-        if(other.gameObject.CompareTag("Player")){
+        if(gameObject.CompareTag("Projectile") && other.gameObject.CompareTag("Player")){
             other.gameObject.GetComponent<Nyarla2DController>().health -= 1;
         }
         Destroy(this.gameObject);
