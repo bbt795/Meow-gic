@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 7321826846592279876}
   - component: {fileID: 3949411955404739125}
   - component: {fileID: 7571082410732851512}
+  - component: {fileID: 773632691407883638}
+  - component: {fileID: 4352818821824432332}
   m_Layer: 0
   m_Name: Bunny Sis
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,3 +123,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_camera: {fileID: 0}
   tran: {fileID: 4856005944389216682}
+--- !u!114 &773632691407883638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8795581496706983219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fbbf003c521c431cb755706ebf68d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueSet: {fileID: 11400000, guid: 6b22ae3bdab7548fc97bf745765470cf, type: 2}
+  name: Bunny Sis
+  currentLine: 0
+  dialogueText: {fileID: 0}
+  nameText: {fileID: 0}
+  dialoguePanel: {fileID: 0}
+--- !u!65 &4352818821824432332
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8795581496706983219}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 8.559906, y: 15.166549, z: 0.2}
+  m_Center: {x: -0.006713867, y: -1.6641335, z: 0}

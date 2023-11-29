@@ -11,6 +11,7 @@ public class Nyarla3DController : MonoBehaviour
     public Animator myAnim;
     public Vector2 lastDirection;
     public NPC villager;
+    public bool playerCanMove = true;
     [SerializeField] GameObject interactionPanel;
     public float speed = 10.0f;
     // Start is called before the first frame update
@@ -48,6 +49,7 @@ public class Nyarla3DController : MonoBehaviour
         {
             Debug.Log(villager.currentLine);
             villager.EndDialogue();
+            playerCanMove = true;
         }
     }
     // Update is called once per frame
@@ -56,7 +58,7 @@ public class Nyarla3DController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W)||Input.GetKeyDown(KeyCode.A)||Input.GetKeyDown(KeyCode.S)||Input.GetKeyDown(KeyCode.D))
         {
 
-            if (myRig != null)
+            if (myRig != null && playerCanMove)
             {
                 myAnim.SetInteger("DIR", 1);
 
@@ -66,10 +68,14 @@ public class Nyarla3DController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E) && villager != null){
             // NPC villager = interactable.transform.GetComponent<NPC>();
                 interactionPanel.SetActive(false);
+                playerCanMove = false;
                 ProgressDialogue();
         }
-        myRig.angularVelocity = new Vector3(0, lastDirection.x, 0)*speed; 
-        myRig.velocity = transform.forward*speed*lastDirection.y+new Vector3(0,myRig.velocity.y,0);
+        if(playerCanMove){
+            myRig.angularVelocity = new Vector3(0, lastDirection.x, 0)*speed; 
+            myRig.velocity = transform.forward*speed*lastDirection.y+new Vector3(0,myRig.velocity.y,0);
+        }
+        
     }
 
 

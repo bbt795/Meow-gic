@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0d1cb73fd08247988cdf0924a15f607, type: 3}
   m_Name: Wolf
   m_EditorClassIdentifier: 
-  dialogue: []
+  dialogue:
+  - It looks like the forest is still normal
+  - You reckon it has the fix to this whole mess?
+  - I hate to ask, but could you go out there 'n check?
+  - Sorry Nya, you're the only one who can handle that place...

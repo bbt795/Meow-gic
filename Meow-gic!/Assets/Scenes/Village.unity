@@ -1388,6 +1388,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1066234105}
     m_Modifications:
+    - target: {fileID: 773632691407883638, guid: 37379ad75b44d3a42805adb789928454, type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 1461922049}
+    - target: {fileID: 773632691407883638, guid: 37379ad75b44d3a42805adb789928454, type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 1838687571}
+    - target: {fileID: 773632691407883638, guid: 37379ad75b44d3a42805adb789928454, type: 3}
+      propertyPath: dialoguePanel
+      value: 
+      objectReference: {fileID: 1001592091}
     - target: {fileID: 4856005944389216682, guid: 37379ad75b44d3a42805adb789928454, type: 3}
       propertyPath: m_LocalPosition.x
       value: -34
@@ -2851,6 +2863,18 @@ PrefabInstance:
       propertyPath: m_camera
       value: 
       objectReference: {fileID: 587161214}
+    - target: {fileID: 8394696188270979684, guid: 1056dd9127c6f1c45b41db7b00a0c492, type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 1461922049}
+    - target: {fileID: 8394696188270979684, guid: 1056dd9127c6f1c45b41db7b00a0c492, type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 1838687571}
+    - target: {fileID: 8394696188270979684, guid: 1056dd9127c6f1c45b41db7b00a0c492, type: 3}
+      propertyPath: dialoguePanel
+      value: 
+      objectReference: {fileID: 1001592091}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8767,10 +8791,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bunny Bro
       objectReference: {fileID: 0}
-    - target: {fileID: 1150201390089026754, guid: 68631e1daa3b1414db1ea4f6d2eea82e, type: 3}
-      propertyPath: m_TagString
-      value: NPC
-      objectReference: {fileID: 0}
+    - target: {fileID: 3587775849901099414, guid: 68631e1daa3b1414db1ea4f6d2eea82e, type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 1461922049}
+    - target: {fileID: 3587775849901099414, guid: 68631e1daa3b1414db1ea4f6d2eea82e, type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 1838687571}
+    - target: {fileID: 3587775849901099414, guid: 68631e1daa3b1414db1ea4f6d2eea82e, type: 3}
+      propertyPath: dialoguePanel
+      value: 
+      objectReference: {fileID: 1001592091}
     - target: {fileID: 4288761939214555805, guid: 68631e1daa3b1414db1ea4f6d2eea82e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -40.86704
@@ -8814,13 +8846,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1150201390089026754, guid: 68631e1daa3b1414db1ea4f6d2eea82e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1806174585}
-    - targetCorrespondingSourceObject: {fileID: 1150201390089026754, guid: 68631e1daa3b1414db1ea4f6d2eea82e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1806174586}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68631e1daa3b1414db1ea4f6d2eea82e, type: 3}
 --- !u!1001 &1308476141
 PrefabInstance:
@@ -9623,11 +9649,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39522471a34a22d4db16898828703cb6, type: 3}
---- !u!1 &1413158697 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1150201390089026754, guid: 68631e1daa3b1414db1ea4f6d2eea82e, type: 3}
-  m_PrefabInstance: {fileID: 1304868062}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1461922047
 GameObject:
   m_ObjectHideFlags: 0
@@ -12344,45 +12365,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4288761939214555805, guid: 68631e1daa3b1414db1ea4f6d2eea82e, type: 3}
   m_PrefabInstance: {fileID: 1304868062}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1806174585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1413158697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fbbf003c521c431cb755706ebf68d83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueSet: {fileID: 11400000, guid: 8c7a47563dbc1419bbc6ba4893137791, type: 2}
-  name: Bunny Bro
-  currentLine: 0
-  dialogueText: {fileID: 1838687571}
-  nameText: {fileID: 1461922049}
-  dialoguePanel: {fileID: 1001592091}
---- !u!65 &1806174586
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1413158697}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 7.8594685, y: 13.262864, z: 0.20000002}
-  m_Center: {x: -0.032092094, y: -2.6903872, z: -0.000016145437}
 --- !u!1001 &1825634036
 PrefabInstance:
   m_ObjectHideFlags: 0

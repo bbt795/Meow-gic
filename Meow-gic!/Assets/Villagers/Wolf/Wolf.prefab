@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 3535390542884521024}
   - component: {fileID: 8524545268853129339}
   - component: {fileID: 7409870676694163732}
+  - component: {fileID: 8394696188270979684}
+  - component: {fileID: 2983055232036678044}
   m_Layer: 0
   m_Name: Wolf
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,3 +123,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_camera: {fileID: 0}
   tran: {fileID: 4259539589657390645}
+--- !u!114 &8394696188270979684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530677224368204686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fbbf003c521c431cb755706ebf68d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueSet: {fileID: 11400000, guid: cf83cab6b737e42be94097073640181d, type: 2}
+  name: Wolf
+  currentLine: 0
+  dialogueText: {fileID: 0}
+  nameText: {fileID: 0}
+  dialoguePanel: {fileID: 0}
+--- !u!65 &2983055232036678044
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530677224368204686}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 12.44569, y: 19.148075, z: 0.20000005}
+  m_Center: {x: 0.727272, y: 0.07997894, z: 0.000015548212}
