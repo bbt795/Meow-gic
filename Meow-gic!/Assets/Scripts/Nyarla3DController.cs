@@ -10,7 +10,7 @@ public class Nyarla3DController : MonoBehaviour
     public Rigidbody myRig; //rigidbody
     public Animator myAnim;
     public Vector2 lastDirection;
-    public GameObject interactable;
+    public NPC villager;
     [SerializeField] GameObject interactionPanel;
     public float speed = 10.0f;
     // Start is called before the first frame update
@@ -48,26 +48,47 @@ public class Nyarla3DController : MonoBehaviour
             }
 
         }
-        if(Input.GetKeyDown(KeyCode.E)){
-            NPC villager = interactable.transform.GetComponent<NPC>();
-            if(villager != null){
+        if(Input.GetKeyDown(KeyCode.E) && villager != null){
+            // NPC villager = interactable.transform.GetComponent<NPC>();
                 interactionPanel.SetActive(false);
-                villager.ShowDialogue();
-            }
+                ProgressDialogue();
+                // if(villager.currentLine == 0){
+                //     villager.ShowDialogue();
+                // }
+                // else if(villager.currentLine < villager.dialogueSet.dialogue.Length){
+                //     villager.UpdateDialogue();
+                // }
+                // else{
+                //     villager.EndDialogue();
+                // }
         }
         myRig.angularVelocity = new Vector3(0, lastDirection.x, 0)*speed; 
         myRig.velocity = transform.forward*speed*lastDirection.y+new Vector3(0,myRig.velocity.y,0);
     }
+    public void ProgressDialogue(){
+        if(villager.currentLine == 0){
+            villager.ShowDialogue();
+        }
+        else if (villager.currentLine < villager.dialogueSet.dialogue.Length)
+        {
+            villager.currentLine++;
+            villager.UpdateDialogue();
+        }
+        else
+        {
+            villager.EndDialogue();
+        }
+    }
 
     private void OnTriggerEnter(Collider other){
         if(other.tag == "NPC"){
-            interactable = other.gameObject;
+            villager = other.transform.GetComponent<NPC>();
             interactionPanel.SetActive(true);
         }
     }
 
     private void OnTriggerExit(){
-        interactable = null;
+        villager = null;
         interactionPanel.SetActive(false);
     }
 
