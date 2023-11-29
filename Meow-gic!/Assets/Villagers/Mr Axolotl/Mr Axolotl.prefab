@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1959155249692621402}
   - component: {fileID: 2081871484704458773}
   - component: {fileID: 5796258782891971865}
+  - component: {fileID: 4524206797111020277}
   m_Layer: 0
   m_Name: Mr Axolotl
   m_TagString: Untagged
@@ -106,3 +107,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4524206797111020277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7671707073879949998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967d5e72271f448f1a376156cbed9e71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_camera: {fileID: 0}
+  tran: {fileID: 1959155249692621402}

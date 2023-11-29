@@ -10,6 +10,8 @@ public class Nyarla3DController : MonoBehaviour
     public Rigidbody myRig; //rigidbody
     public Animator myAnim;
     public Vector2 lastDirection;
+    public GameObject interactable;
+    [SerializeField] GameObject interactionPanel;
     public float speed = 10.0f;
     // Start is called before the first frame update
     public void onMove(InputAction.CallbackContext ev){
@@ -46,12 +48,40 @@ public class Nyarla3DController : MonoBehaviour
             }
 
         }
+        if(Input.GetKeyDown(KeyCode.E)){
+            NPC villager = interactable.transform.GetComponent<NPC>();
+            if(villager != null){
+                interactionPanel.SetActive(false);
+                villager.ShowDialogue();
+            }
+        }
         myRig.angularVelocity = new Vector3(0, lastDirection.x, 0)*speed; 
         myRig.velocity = transform.forward*speed*lastDirection.y+new Vector3(0,myRig.velocity.y,0);
     }
 
+    private void OnTriggerEnter(Collider other){
+        if(other.tag == "NPC"){
+            interactable = other.gameObject;
+            interactionPanel.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(){
+        interactable = null;
+        interactionPanel.SetActive(false);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
+        // if(collision.gameObject.CompareTag("NPC")){
+        //     NPC villager = collision.transform.GetComponent<NPC>();
+        //     if (villager != null)
+        //         {
+        //         // Call the function in the object's script.
+        //             villager.ShowDialogue();
+        //             Debug.Log(villager.name);
+        //         }
+        // }
         
         if(collision.transform.gameObject.CompareTag("StartCave")) {
 

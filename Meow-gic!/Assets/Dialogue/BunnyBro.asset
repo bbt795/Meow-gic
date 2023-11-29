@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0d1cb73fd08247988cdf0924a15f607, type: 3}
   m_Name: BunnyBro
   m_EditorClassIdentifier: 
-  dialogue: []
+  dialogue:
+  - Sister, what's going on?
+  - What happened to our house?! It looks strange

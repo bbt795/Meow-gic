@@ -24,11 +24,12 @@ public class Nyarla2DController : Entity
     public TextMeshProUGUI healthDisplayText;
     public GameObject goldDisplay;
     public TextMeshProUGUI goldDisplayText;
+    public TextMeshProUGUI livesDisplay;
     public GameObject gameManager;
     public GameObject starAttack;
     public Vector2 lastDirection;
     public string villageScene;
-    public TextMeshProUGUI livesDisplay;
+
 
     // Start is called before the first frame update
     public void onMove(InputAction.CallbackContext ev)

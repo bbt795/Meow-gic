@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2634886229960946214}
   - component: {fileID: 4784064804982192267}
   - component: {fileID: 8116178712156654457}
+  - component: {fileID: 5391176038481357550}
   m_Layer: 0
   m_Name: Mrs Frog
   m_TagString: Untagged
@@ -106,3 +107,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5391176038481357550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645521213488512325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967d5e72271f448f1a376156cbed9e71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_camera: {fileID: 0}
+  tran: {fileID: 2634886229960946214}
