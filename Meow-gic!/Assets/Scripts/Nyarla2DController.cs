@@ -74,19 +74,18 @@ public class Nyarla2DController : Entity
         maxHealth = health;
         healthDisplayText = healthDisplay.GetComponent<TextMeshProUGUI>();
         goldDisplayText = goldDisplay.GetComponent<TextMeshProUGUI>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
     }
 
     private void OnTriggerEnter2D(Collider2D other){
         if(other.tag == "Gold"){
             Coins otherObject = other.gameObject.GetComponent<Coins>();
             gameManager.GetComponent<DoNotDestroy>().gold += otherObject.value;
-            Debug.Log(gameManager.GetComponent<DoNotDestroy>().gold);
             Destroy(otherObject.gameObject);
         }
         if(other.tag == "Health"){
             HealthPotions otherObject = other.gameObject.GetComponent<HealthPotions>();
             health = maxHealth;
-            Debug.Log(health);
             Destroy(otherObject.gameObject);
         }
     }
@@ -119,6 +118,7 @@ public class Nyarla2DController : Entity
             }
 
         }
+
         if(health <= 0 && gameManager.GetComponent<DoNotDestroy>().lives != 0){
             gameManager.GetComponent<DoNotDestroy>().lives -= 1;
 

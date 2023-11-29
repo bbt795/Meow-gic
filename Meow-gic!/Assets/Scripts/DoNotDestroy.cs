@@ -17,6 +17,7 @@ public class DoNotDestroy : MonoBehaviour
             Destroy(this.gameObject);
 
         }
+
         DontDestroyOnLoad(transform.gameObject);
     }
 
