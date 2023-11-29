@@ -12,6 +12,7 @@ TagManager:
   - GameAudio
   - StartCave
   - Attack
+  - GameManager
   layers:
   - Default
   - TransparentFX
