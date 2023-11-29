@@ -28,6 +28,7 @@ public class NPC : MonoBehaviour
     }
     public void EndDialogue()
     {
+        currentLine = 0;
         nameText.text = null;
         dialogueText.text = null;
         dialoguePanel.SetActive(false);
