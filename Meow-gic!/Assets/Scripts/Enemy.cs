@@ -56,7 +56,7 @@ public class Enemy : Entity
 
         }
 
-        if (other.gameObject.CompareTag("Projectile"))
+        if (other.gameObject.CompareTag("Attack"))
         {
 
 

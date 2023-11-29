@@ -11,6 +11,7 @@ TagManager:
   - Health
   - GameAudio
   - StartCave
+  - Attack
   layers:
   - Default
   - TransparentFX
