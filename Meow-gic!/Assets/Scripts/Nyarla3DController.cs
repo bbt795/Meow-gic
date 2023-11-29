@@ -15,7 +15,6 @@ public class Nyarla3DController : MonoBehaviour
     public float speed = 10.0f;
     // Start is called before the first frame update
     public void onMove(InputAction.CallbackContext ev){
-        Debug.Log("Inside Callback");
         if(ev.performed)
         {
             lastDirection = ev.ReadValue<Vector2>();
@@ -35,6 +34,22 @@ public class Nyarla3DController : MonoBehaviour
         }
     }
 
+    public void ProgressDialogue(){
+        if(villager.currentLine == 0){
+            villager.ShowDialogue();
+            villager.currentLine++;
+        }
+        else if (villager.currentLine < villager.dialogueSet.dialogue.Length)
+        {
+            villager.UpdateDialogue();
+            villager.currentLine++;
+        }
+        else
+        {
+            Debug.Log(villager.currentLine);
+            villager.EndDialogue();
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -52,37 +67,15 @@ public class Nyarla3DController : MonoBehaviour
             // NPC villager = interactable.transform.GetComponent<NPC>();
                 interactionPanel.SetActive(false);
                 ProgressDialogue();
-                // if(villager.currentLine == 0){
-                //     villager.ShowDialogue();
-                // }
-                // else if(villager.currentLine < villager.dialogueSet.dialogue.Length){
-                //     villager.UpdateDialogue();
-                // }
-                // else{
-                //     villager.EndDialogue();
-                // }
         }
         myRig.angularVelocity = new Vector3(0, lastDirection.x, 0)*speed; 
         myRig.velocity = transform.forward*speed*lastDirection.y+new Vector3(0,myRig.velocity.y,0);
     }
-    public void ProgressDialogue(){
-        if(villager.currentLine == 0){
-            villager.ShowDialogue();
-        }
-        else if (villager.currentLine < villager.dialogueSet.dialogue.Length)
-        {
-            villager.currentLine++;
-            villager.UpdateDialogue();
-        }
-        else
-        {
-            villager.EndDialogue();
-        }
-    }
+
 
     private void OnTriggerEnter(Collider other){
         if(other.tag == "NPC"){
-            villager = other.transform.GetComponent<NPC>();
+            villager = other.gameObject.transform.GetComponent<NPC>();
             interactionPanel.SetActive(true);
         }
     }

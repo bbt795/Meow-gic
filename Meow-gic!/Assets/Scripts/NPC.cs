@@ -16,6 +16,7 @@ public class NPC : MonoBehaviour
     // Start is called before the first frame update
     public void ShowDialogue()
     {
+        currentLine = 0;
         nameText.text = name;
         dialogueText.text = dialogueSet.dialogue[currentLine];
         dialoguePanel.SetActive(true);
@@ -39,6 +40,6 @@ public class NPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

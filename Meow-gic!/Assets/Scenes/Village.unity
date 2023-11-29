@@ -5785,7 +5785,7 @@ MonoBehaviour:
   myRig: {fileID: 0}
   myAnim: {fileID: 0}
   lastDirection: {x: 0, y: 0}
-  interactable: {fileID: 0}
+  villager: {fileID: 0}
   interactionPanel: {fileID: 564618447}
   speed: 10
 --- !u!114 &903504691
@@ -7743,7 +7743,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1113907365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12358,6 +12358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueSet: {fileID: 11400000, guid: 8c7a47563dbc1419bbc6ba4893137791, type: 2}
   name: Bunny Bro
+  currentLine: 0
   dialogueText: {fileID: 1838687571}
   nameText: {fileID: 1461922049}
   dialoguePanel: {fileID: 1001592091}
