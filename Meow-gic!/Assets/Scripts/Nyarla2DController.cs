@@ -28,6 +28,8 @@ public class Nyarla2DController : Entity
     public GameObject starAttack;
     public Vector2 lastDirection;
     public string villageScene;
+    public TextMeshProUGUI livesDisplay;
+
     // Start is called before the first frame update
     public void onMove(InputAction.CallbackContext ev)
     {
@@ -119,6 +121,11 @@ public class Nyarla2DController : Entity
         }
         if(health <= 0 && gameManager.GetComponent<DoNotDestroy>().lives != 0){
             gameManager.GetComponent<DoNotDestroy>().lives -= 1;
+
+            livesDisplay.transform.parent.transform.gameObject.SetActive(true);
+
+            StartCoroutine("Wait");
+
             SceneManager.LoadScene(villageScene);
             //Change scene to village, transfer information about lives and gold
         }
@@ -130,5 +137,12 @@ public class Nyarla2DController : Entity
         myRig.velocity = new Vector2(velocity.x, velocity.y);
         healthDisplayText.text = "" + health;
         goldDisplayText.text = "" + gameManager.GetComponent<DoNotDestroy>().gold;
+        livesDisplay.text = "Lives Remaining: " + gameManager.GetComponent<DoNotDestroy>().lives;
     }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(15);
+    }
+
 }
