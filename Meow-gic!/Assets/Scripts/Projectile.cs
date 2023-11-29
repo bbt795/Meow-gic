@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Projectile : MonoBehaviour
 {
-    public int strength = 1;
+    public int strength;
     // Start is called before the first frame update
     void Start()
     {

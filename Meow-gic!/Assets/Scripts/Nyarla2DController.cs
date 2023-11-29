@@ -19,7 +19,7 @@ public class Nyarla2DController : Entity
     public float speed = 5.0f;
     public float health = 10f;
     public float maxHealth;
-    public float strength;
+    public int strength = 1;
     public GameObject healthDisplay;
     public TextMeshProUGUI healthDisplayText;
     public GameObject goldDisplay;
@@ -61,6 +61,7 @@ public class Nyarla2DController : Entity
     void CreateStarAttack(Vector2 direction){
         Vector3 spawnPosition = transform.position + new Vector3(direction.x, direction.y, 0);
         GameObject temp = GameObject.Instantiate(starAttack, spawnPosition, Quaternion.identity);
+        temp.GetComponent<Projectile>().strength = strength;
         temp.GetComponent<Rigidbody2D>().velocity = direction*speed*2f;
     }
     void Start()

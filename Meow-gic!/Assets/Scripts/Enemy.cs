@@ -11,13 +11,30 @@ public class Enemy : Entity
     public float speed;
     public float health = 5;
     public float maxHealth;
-    public float strength = 1;
+    public int strength = 1;
     public Vector2 presetDirection;
     private Vector2 followDirection;
     public float distance;
     public bool followPlayer = false;
     public GameObject gold;
     public GameObject potion;
+    public GameObject playerAttack;
+    public float fireRate = 2f;          // Firing rate in shots per second
+    private float timeSinceLastFire = 0f;
+
+    void CreatePlayerAttack(Vector2 direction){
+
+        Vector2 spawnPosition = (Vector2)transform.position + direction.normalized * 1.5f;
+        // Instantiate the projectile
+        GameObject projectile = Instantiate(playerAttack, spawnPosition, Quaternion.identity);
+        Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
+
+        // Apply force to the projectile in the direction of the player
+        projectile.GetComponent<Projectile>().strength = strength;
+        projectileRb.velocity = direction * speed *2.5f;
+        // temp.GetComponent<Projectile>().strength = strength;
+        // temp.GetComponent<Rigidbody2D>().velocity = direction*speed*2f;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -83,6 +100,22 @@ public class Enemy : Entity
         {
             followDirection = presetDirection;
             followPlayer = false;
+        }
+        if (gameObject.name == "Tree" && distance < 12f){
+            Vector2 direction = player.transform.position - transform.position;
+            timeSinceLastFire += Time.deltaTime;
+            
+            // Check if enough time has passed to fire again
+            if (timeSinceLastFire >= 1f / fireRate)
+            {
+                // Fire the projectile
+                CreatePlayerAttack(direction.normalized);
+
+                // Reset the firing timer
+                timeSinceLastFire = 0f;
+            }
+            
+            
         }
         if(health<=0)
         {
