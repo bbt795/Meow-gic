@@ -9,6 +9,7 @@ public class ShopButtons : MonoBehaviour
 {
     public GameObject gameManager;
     public GameObject shopPanel;
+    public Nyarla3DController player;
     public Sprite[] spriteArray;
     public Button healthUpgradeButton;
     public Button projectileUpgradeButton;
@@ -55,6 +56,7 @@ public class ShopButtons : MonoBehaviour
 
     public void ExitShop(){
         shopPanel.SetActive(false);
+        player.playerCanMove = true;
     }
 
     void Update(){

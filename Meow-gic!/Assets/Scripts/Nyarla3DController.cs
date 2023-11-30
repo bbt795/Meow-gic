@@ -50,6 +50,7 @@ public class Nyarla3DController : MonoBehaviour
         {
             Debug.Log(villager.currentLine);
             villager.EndDialogue();
+            myRig.isKinematic = false;
             playerCanMove = true;
         }
     }
@@ -75,21 +76,26 @@ public class Nyarla3DController : MonoBehaviour
             // NPC villager = interactable.transform.GetComponent<NPC>();
             if(villager != null){
                 interactionPanel.SetActive(false);
+                myRig.isKinematic = true;
                 playerCanMove = false;
                 ProgressDialogue();
             }
             else if(shopKeeper != null){
                 interactionPanel.SetActive(false);
+                myRig.isKinematic = true;
                 playerCanMove = false;
                 OpenShop();
             }
         }
-        if(!playerCanMove && !shopKeeper.shopPanel.activeSelf){
-            playerCanMove = true;
+        if(myRig.isKinematic && !shopKeeper.shopPanel.activeSelf && playerCanMove){
+            myRig.isKinematic = false;
+        }
+        if(!playerCanMove){
+            interactionPanel.SetActive(false);
         }
         if(playerCanMove){
             myRig.angularVelocity = new Vector3(0, lastDirection.x, 0)*speed; 
-            myRig.velocity = transform.forward*speed*lastDirection.y+new Vector3(0,myRig.velocity.y,0);
+            myRig.velocity = transform.forward*speed*lastDirection.y+new Vector3(0,myRig.velocity.y,0);  
         }
         
     }
