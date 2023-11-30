@@ -8,6 +8,7 @@ using TMPro;
 public class ShopButtons : MonoBehaviour
 {
     public GameObject gameManager;
+    public Sprite[] spriteArray;
     // public GameObject healthPriceDisplay;
     // public TextMeshProUGUI healthPriceDisplayText;
     // public GameObject healthPriceDisplay;
