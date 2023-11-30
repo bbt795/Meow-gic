@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : Entity
 {
@@ -122,6 +123,14 @@ public class Enemy : Entity
             CreateCoins();
             CreatePotions();
             Destroy(this.gameObject);
+
+            if(gameObject.name == "Tree")
+            {
+
+                SceneManager.LoadScene(0);
+
+            }
+
         }
     }
 }
