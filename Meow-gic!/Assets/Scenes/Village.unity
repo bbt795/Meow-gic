@@ -15984,6 +15984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   shopPanel: {fileID: 2030079490}
+  player: {fileID: 903504690}
   spriteArray:
   - {fileID: 1774537603, guid: b26f10c85f6c2499683ce6cae3af27b6, type: 3}
   - {fileID: 1594461873, guid: b26f10c85f6c2499683ce6cae3af27b6, type: 3}
