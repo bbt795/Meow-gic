@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5796258782891971865}
   - component: {fileID: 4524206797111020277}
   - component: {fileID: 8742952874427652965}
+  - component: {fileID: 5064343927394559144}
   m_Layer: 0
   m_Name: Mr Axolotl
   m_TagString: Shopkeeper
@@ -143,3 +144,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 13.238495, y: 14.4377575, z: 0.2}
   m_Center: {x: 1.0831451, y: -2.0096064, z: 0}
+--- !u!114 &5064343927394559144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7671707073879949998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb95d1c2ba9904da1abbdc43279179bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueSet: {fileID: 11400000, guid: d9cc5c415226e4480a3f39ece272034a, type: 2}
+  name: Mr. Axolotl
+  currentLine: 0
+  dialogueText: {fileID: 0}
+  nameText: {fileID: 0}
+  dialoguePanel: {fileID: 0}

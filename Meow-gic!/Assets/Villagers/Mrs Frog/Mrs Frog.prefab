@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8116178712156654457}
   - component: {fileID: 5391176038481357550}
   - component: {fileID: 14081710430491639}
+  - component: {fileID: 9177897395855713026}
   m_Layer: 0
   m_Name: Mrs Frog
   m_TagString: Shopkeeper
@@ -143,3 +144,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 11.132706, y: 18.47705, z: 0.2}
   m_Center: {x: -0.036094666, y: -0.088810444, z: 0}
+--- !u!114 &9177897395855713026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645521213488512325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb95d1c2ba9904da1abbdc43279179bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueSet: {fileID: 11400000, guid: d9cc5c415226e4480a3f39ece272034a, type: 2}
+  name: Mrs.Frog
+  currentLine: 0
+  dialogueText: {fileID: 0}
+  nameText: {fileID: 0}
+  dialoguePanel: {fileID: 0}
