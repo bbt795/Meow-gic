@@ -64,3 +64,6 @@ TagManager:
   - name: Door
     uniqueID: 3146652085
     locked: 0
+  - name: Teleport
+    uniqueID: 3403282223
+    locked: 0
