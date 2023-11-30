@@ -7,7 +7,13 @@ using UnityEngine.SceneManagement;
 public class DoNotDestroy : MonoBehaviour
 {
     public int lives = 9;
-    public float gold;
+    public int healthUpgradeLevel = 0;
+    public int healthUpgradePrice = 50;
+    public int projectileUpgradeLevel = 0;
+    public int projectileUpgradePrice = 50;
+    public float maxHealth = 10f;
+    public int strength = 1;
+    public float gold = 400;
     private void Awake(){
         GameObject[] gameManagerObj = GameObject.FindGameObjectsWithTag("GameManager");
 

@@ -11,6 +11,7 @@ public class Nyarla3DController : MonoBehaviour
     public Animator myAnim;
     public Vector2 lastDirection;
     public NPC villager;
+    public ShopKeepers shopKeeper;
     public bool playerCanMove = true;
     [SerializeField] GameObject interactionPanel;
     public float speed = 10.0f;
@@ -52,6 +53,11 @@ public class Nyarla3DController : MonoBehaviour
             playerCanMove = true;
         }
     }
+    public void OpenShop(){
+        if(!shopKeeper.shopPanel.activeSelf){
+            shopKeeper.ShowShop();
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -65,11 +71,21 @@ public class Nyarla3DController : MonoBehaviour
             }
 
         }
-        if(Input.GetKeyDown(KeyCode.E) && villager != null){
+        if(Input.GetKeyDown(KeyCode.E)){
             // NPC villager = interactable.transform.GetComponent<NPC>();
+            if(villager != null){
                 interactionPanel.SetActive(false);
                 playerCanMove = false;
                 ProgressDialogue();
+            }
+            else if(shopKeeper != null){
+                interactionPanel.SetActive(false);
+                playerCanMove = false;
+                OpenShop();
+            }
+        }
+        if(!playerCanMove && !shopKeeper.shopPanel.activeSelf){
+            playerCanMove = true;
         }
         if(playerCanMove){
             myRig.angularVelocity = new Vector3(0, lastDirection.x, 0)*speed; 
@@ -84,10 +100,15 @@ public class Nyarla3DController : MonoBehaviour
             villager = other.gameObject.transform.GetComponent<NPC>();
             interactionPanel.SetActive(true);
         }
+        else if(other.tag == "Shopkeeper"){
+            shopKeeper = other.gameObject.transform.GetComponent<ShopKeepers>();
+            interactionPanel.SetActive(true);
+        }
     }
 
     private void OnTriggerExit(){
         villager = null;
+        shopKeeper = null;
         interactionPanel.SetActive(false);
     }
 

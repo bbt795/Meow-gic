@@ -17,9 +17,9 @@ public class Nyarla2DController : Entity
     public float teleportUpDown = 11f; 
     public float teleportLeftRight = 16f;
     public float speed = 5.0f;
-    public float health = 10f;
+    public float health;
     public float maxHealth;
-    public int strength = 1;
+    public int strength;
     public GameObject healthDisplay;
     public TextMeshProUGUI healthDisplayText;
     public GameObject goldDisplay;
@@ -72,10 +72,12 @@ public class Nyarla2DController : Entity
         myAnim = this.GetComponent<Animator>();
         myRenderer = this.GetComponent<SpriteRenderer>();
         myRig = this.GetComponent<Rigidbody2D>();
-        maxHealth = health;
         healthDisplayText = healthDisplay.GetComponent<TextMeshProUGUI>();
         goldDisplayText = goldDisplay.GetComponent<TextMeshProUGUI>();
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        maxHealth = gameManager.GetComponent<DoNotDestroy>().maxHealth;
+        strength = gameManager.GetComponent<DoNotDestroy>().strength;
+        health = maxHealth;
     }
 
     private void OnTriggerEnter2D(Collider2D other){

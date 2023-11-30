@@ -162,3 +162,5 @@ MonoBehaviour:
   dialogueText: {fileID: 0}
   nameText: {fileID: 0}
   dialoguePanel: {fileID: 0}
+  shopPanel: {fileID: 0}
+  openShop: 0

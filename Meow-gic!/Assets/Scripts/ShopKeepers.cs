@@ -1,10 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using TMPro;
 
 public class ShopKeepers : NPC
 {
-    // Start is called before the first frame update
+    public GameObject shopPanel;
+    public void ShowShop()
+    {
+        currentLine = 0;
+        dialogueText.text = dialogueSet.dialogue[currentLine];
+        shopPanel.SetActive(true);
+
+    }
+
+    // Start is called bef
     void Start()
     {
         

@@ -760,6 +760,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6600629272906566492, guid: c2c852d28b6e947738992928bd3ab15e, type: 3}
+      propertyPath: health
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600629272906566492, guid: c2c852d28b6e947738992928bd3ab15e, type: 3}
+      propertyPath: strength
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600629272906566492, guid: c2c852d28b6e947738992928bd3ab15e, type: 3}
       propertyPath: goldDisplay
       value: 
       objectReference: {fileID: 182120916}
@@ -1546,7 +1554,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 9
-  gold: 0
+  healthUpgradeLevel: 0
+  healthUpgradePrice: 50
+  projectileUpgradeLevel: 0
+  projectileUpgradePrice: 50
+  maxHealth: 10
+  strength: 1
+  gold: 400
 --- !u!4 &1893038919
 Transform:
   m_ObjectHideFlags: 0

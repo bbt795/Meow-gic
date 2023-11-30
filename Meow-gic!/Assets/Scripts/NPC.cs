@@ -10,9 +10,9 @@ public class NPC : MonoBehaviour
     public DialogueAsset dialogueSet;
     public string name;
     public int currentLine = 0;
-    [SerializeField] TextMeshProUGUI dialogueText;
-    [SerializeField] TextMeshProUGUI nameText;
-    [SerializeField] GameObject dialoguePanel;
+    public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI nameText;
+    public GameObject dialoguePanel;
     // Start is called before the first frame update
     public void ShowDialogue()
     {
