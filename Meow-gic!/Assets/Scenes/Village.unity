@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43729582, g: 0.48506427, b: 0.5653342, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14862,6 +14862,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5383256193190778140, guid: 416a3502280f02b4e974015c3b847c21, type: 3}
   m_PrefabInstance: {fileID: 1881336707}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1893038917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1893038919}
+  - component: {fileID: 1893038918}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: GameManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1893038918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893038917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb7dd984dac7648708969f0a9dcecdc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 9
+  healthUpgradeLevel: 0
+  healthUpgradePrice: 50
+  projectileUpgradeLevel: 0
+  projectileUpgradePrice: 25
+  maxHealth: 10
+  strength: 1
+  gold: 0
+--- !u!4 &1893038919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893038917}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1894661724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16620,6 +16672,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1057321778}
   - {fileID: 805688187}
+  - {fileID: 1893038919}
   - {fileID: 1752793496}
   - {fileID: 442670012}
   - {fileID: 1066234105}
