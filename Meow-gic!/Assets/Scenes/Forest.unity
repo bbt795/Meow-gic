@@ -1557,10 +1557,10 @@ MonoBehaviour:
   healthUpgradeLevel: 0
   healthUpgradePrice: 50
   projectileUpgradeLevel: 0
-  projectileUpgradePrice: 50
+  projectileUpgradePrice: 25
   maxHealth: 10
   strength: 1
-  gold: 400
+  gold: 0
 --- !u!4 &1893038919
 Transform:
   m_ObjectHideFlags: 0

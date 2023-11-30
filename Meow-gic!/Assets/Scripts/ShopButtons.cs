@@ -35,8 +35,8 @@ public class ShopButtons : MonoBehaviour
             gameManager.GetComponent<DoNotDestroy>().gold -= gameManager.GetComponent<DoNotDestroy>().healthUpgradePrice;
             gameManager.GetComponent<DoNotDestroy>().healthUpgradeLevel += 1;
             healthUpgradeButton.image.sprite = spriteArray[gameManager.GetComponent<DoNotDestroy>().healthUpgradeLevel];
-            if(gameManager.GetComponent<DoNotDestroy>().healthUpgradeLevel == 4){
-                healthUpgradeButton.interactable = false;
+            if(gameManager.GetComponent<DoNotDestroy>().healthUpgradeLevel != 4){
+                gameManager.GetComponent<DoNotDestroy>().healthUpgradePrice += 50;
             }
         }
     }
@@ -47,8 +47,8 @@ public class ShopButtons : MonoBehaviour
             gameManager.GetComponent<DoNotDestroy>().gold -= gameManager.GetComponent<DoNotDestroy>().projectileUpgradePrice;
             gameManager.GetComponent<DoNotDestroy>().projectileUpgradeLevel += 1;
             projectileUpgradeButton.image.sprite = spriteArray[gameManager.GetComponent<DoNotDestroy>().projectileUpgradeLevel];
-            if(gameManager.GetComponent<DoNotDestroy>().projectileUpgradeLevel == 4){
-                projectileUpgradeButton.interactable = false;
+            if(gameManager.GetComponent<DoNotDestroy>().projectileUpgradeLevel != 4){
+                gameManager.GetComponent<DoNotDestroy>().projectileUpgradePrice += 25;
             }
         }
     }
@@ -61,5 +61,12 @@ public class ShopButtons : MonoBehaviour
         healthPriceDisplayText.text = "Price: " + gameManager.GetComponent<DoNotDestroy>().healthUpgradePrice;
         projectilePriceDisplayText.text = "Price: " + gameManager.GetComponent<DoNotDestroy>().projectileUpgradePrice;
         goldDisplayText.text = "Gold: " + gameManager.GetComponent<DoNotDestroy>().gold;
+
+        if(gameManager.GetComponent<DoNotDestroy>().healthUpgradeLevel == 4){
+                healthUpgradeButton.interactable = false;
+            }
+        if(gameManager.GetComponent<DoNotDestroy>().projectileUpgradeLevel == 4){
+                projectileUpgradeButton.interactable = false;
+        }
     }
 }
