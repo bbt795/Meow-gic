@@ -62,15 +62,21 @@ public class ShopButtons : MonoBehaviour
     }
 
     void Update(){
-        healthPriceDisplayText.text = "Price: " + gameManager.GetComponent<DoNotDestroy>().healthUpgradePrice;
-        projectilePriceDisplayText.text = "Price: " + gameManager.GetComponent<DoNotDestroy>().projectileUpgradePrice;
         goldDisplayText.text = "Gold: " + gameManager.GetComponent<DoNotDestroy>().gold;
 
         if(gameManager.GetComponent<DoNotDestroy>().healthUpgradeLevel == 4){
-                healthUpgradeButton.interactable = false;
-            }
+            healthUpgradeButton.interactable = false;
+            healthPriceDisplayText.text = "Price: MAX";
+        }
+        else{
+            healthPriceDisplayText.text = "Price: " + gameManager.GetComponent<DoNotDestroy>().healthUpgradePrice;
+        }
         if(gameManager.GetComponent<DoNotDestroy>().projectileUpgradeLevel == 4){
-                projectileUpgradeButton.interactable = false;
+            projectileUpgradeButton.interactable = false;
+            projectilePriceDisplayText.text = "Price: MAX";
+        }
+        else{
+            projectilePriceDisplayText.text = "Price: " + gameManager.GetComponent<DoNotDestroy>().projectileUpgradePrice;
         }
     }
 }
