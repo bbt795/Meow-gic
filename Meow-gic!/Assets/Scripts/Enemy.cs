@@ -13,6 +13,7 @@ public class Enemy : Entity
     public float health;
     public float maxHealth;
     public int strength;
+    public int projectileStrength;
     public Vector2 presetDirection;
     private Vector2 followDirection;
     public float distance;
@@ -31,7 +32,7 @@ public class Enemy : Entity
         Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
 
         // Apply force to the projectile in the direction of the player
-        projectile.GetComponent<Projectile>().strength = strength;
+        projectile.GetComponent<Projectile>().strength = projectileStrength;
         projectileRb.velocity = direction * speed *2.5f;
         // temp.GetComponent<Projectile>().strength = strength;
         // temp.GetComponent<Rigidbody2D>().velocity = direction*speed*2f;
@@ -44,6 +45,7 @@ public class Enemy : Entity
         myRenderer = this.GetComponent<SpriteRenderer>();
         myRig = this.GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
+        projectileStrength = strength;
         health = maxHealth;
     }
 
@@ -79,7 +81,7 @@ public class Enemy : Entity
 
     void CreatePotions(){
         int randVal = Random.Range(1, 11);
-        if(randVal < maxHealth){
+        if(randVal == 1){
             GameObject temp = GameObject.Instantiate(potion, transform.position + new Vector3(-0.5f, 0f, 0f), Quaternion.identity);
         }
     }
