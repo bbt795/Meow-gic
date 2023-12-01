@@ -94,16 +94,19 @@ public class Enemy : Entity
         var velocity = new Vector2(followDirection.x, followDirection.y).normalized * speed;
         myRig.velocity = new Vector2(velocity.x, velocity.y);
 
-        if(distance < 4f)
-        {
-            followDirection = (player.transform.position - transform.position).normalized;
-            followPlayer = true;
+        if(distance < 12f){
+            if(distance < 4f)
+            {
+                followDirection = (player.transform.position - transform.position).normalized;
+                followPlayer = true;
+            }
+            else
+            {
+                followDirection = presetDirection;
+                followPlayer = false;
+            }
         }
-        else
-        {
-            followDirection = presetDirection;
-            followPlayer = false;
-        }
+        
         if (gameObject.name == "Tree" && distance < 12f){
             Vector2 direction = player.transform.position - transform.position;
             timeSinceLastFire += Time.deltaTime;
