@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class Nyarla2DController : Entity
 {
@@ -29,6 +30,7 @@ public class Nyarla2DController : Entity
     public GameObject starAttack;
     public Vector2 lastDirection;
     public string villageScene;
+    public TextMeshProUGUI gameOverDisplay;
 
 
     // Start is called before the first frame update
@@ -130,6 +132,15 @@ public class Nyarla2DController : Entity
                 StartCoroutine("Wait");
 
                 SceneManager.LoadScene(villageScene);
+            } else
+            {
+
+                gameOverDisplay.transform.parent.transform.gameObject.SetActive(true);
+
+                StartCoroutine("Wait");
+
+                SceneManager.LoadScene(0);
+
             }
                 //Change scene to village, transfer information about lives and gold
         }

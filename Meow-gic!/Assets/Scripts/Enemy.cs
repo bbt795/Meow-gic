@@ -133,7 +133,7 @@ public class Enemy : Entity
             {
 
                 Destroy(GameObject.FindGameObjectWithTag("GameManager"));
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(4);
 
             }
 
