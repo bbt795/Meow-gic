@@ -31,5 +31,19 @@ public class DoNotDestroy : MonoBehaviour
     void Update()
     {
 
+        if(Input.GetKeyDown(KeyCode.Escape)){
+
+            lives = 9;
+            healthUpgradeLevel = 0;
+            healthUpgradePrice = 50;
+            projectileUpgradeLevel = 0;
+            projectileUpgradePrice = 25;
+            maxHealth = 10f;
+            strength = 1;
+
+            SceneManager.LoadScene(0);
+        
+        }
+
     }
 }
