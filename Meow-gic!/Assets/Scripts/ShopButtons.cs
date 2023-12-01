@@ -27,6 +27,8 @@ public class ShopButtons : MonoBehaviour
         healthPriceDisplayText = healthPriceDisplay.GetComponent<TextMeshProUGUI>();
         projectilePriceDisplayText = projectilePriceDisplay.GetComponent<TextMeshProUGUI>();
         goldDisplayText = goldDisplay.GetComponent<TextMeshProUGUI>();
+        healthUpgradeButton.image.sprite = spriteArray[gameManager.GetComponent<DoNotDestroy>().healthUpgradeLevel];
+        projectileUpgradeButton.image.sprite = spriteArray[gameManager.GetComponent<DoNotDestroy>().projectileUpgradeLevel];
 
     }
 
