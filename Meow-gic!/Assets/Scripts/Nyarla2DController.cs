@@ -143,7 +143,7 @@ public class Nyarla2DController : Entity
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(60);
+        yield return new WaitForSeconds(240);
     }
 
 }
