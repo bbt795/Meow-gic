@@ -87,8 +87,10 @@ public class Nyarla3DController : MonoBehaviour
                 OpenShop();
             }
         }
-        if(myRig.isKinematic && !shopKeeper.shopPanel.activeSelf && playerCanMove){
-            myRig.isKinematic = false;
+        if(myRig.isKinematic && shopKeeper!=null && playerCanMove){
+            if(!shopKeeper.shopPanel.activeSelf){
+                myRig.isKinematic = false;
+            }
         }
         if(!playerCanMove){
             interactionPanel.SetActive(false);
