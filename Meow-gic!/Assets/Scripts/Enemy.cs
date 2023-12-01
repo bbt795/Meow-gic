@@ -132,6 +132,7 @@ public class Enemy : Entity
             if(gameObject.name == "Tree")
             {
 
+                Destroy(GameObject.FindGameObjectWithTag("GameManager"));
                 SceneManager.LoadScene(0);
 
             }
