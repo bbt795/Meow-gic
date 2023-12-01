@@ -26,7 +26,7 @@ public class Enemy : Entity
 
     void CreatePlayerAttack(Vector2 direction){
 
-        Vector2 spawnPosition = (Vector2)transform.position + direction.normalized * 1.5f;
+        Vector2 spawnPosition = (Vector2)transform.position + direction.normalized * 2f;
         // Instantiate the projectile
         GameObject projectile = Instantiate(playerAttack, spawnPosition, Quaternion.identity);
         Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
