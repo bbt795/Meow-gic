@@ -133,9 +133,6 @@ public class Nyarla2DController : Entity
             }
                 //Change scene to village, transfer information about lives and gold
         }
-        else if (health <= 0 && gameManager.GetComponent<DoNotDestroy>().lives <= 0){
-            //End game/bring player back to home screen/exit game
-        }
         
         var velocity = new Vector2(lastDirection.x, lastDirection.y).normalized * speed;
         myRig.velocity = new Vector2(velocity.x, velocity.y);
@@ -146,7 +143,7 @@ public class Nyarla2DController : Entity
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(60);
     }
 
 }
