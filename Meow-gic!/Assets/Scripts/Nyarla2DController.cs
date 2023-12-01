@@ -124,13 +124,14 @@ public class Nyarla2DController : Entity
 
         if(health <= 0 && gameManager.GetComponent<DoNotDestroy>().lives != 0){
             gameManager.GetComponent<DoNotDestroy>().lives -= 1;
+            if(gameManager.GetComponent<DoNotDestroy>().lives != 0){
+                livesDisplay.transform.parent.transform.gameObject.SetActive(true);
 
-            livesDisplay.transform.parent.transform.gameObject.SetActive(true);
+                StartCoroutine("Wait");
 
-            StartCoroutine("Wait");
-
-            SceneManager.LoadScene(villageScene);
-            //Change scene to village, transfer information about lives and gold
+                SceneManager.LoadScene(villageScene);
+            }
+                //Change scene to village, transfer information about lives and gold
         }
         else if (health <= 0 && gameManager.GetComponent<DoNotDestroy>().lives <= 0){
             //End game/bring player back to home screen/exit game
