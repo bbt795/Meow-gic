@@ -50,7 +50,7 @@ public class Enemy : Entity
     private void OnCollisionEnter2D(Collision2D other)
     {
 
-        if (other.gameObject.CompareTag("Wall") && followPlayer == false)
+        if ((other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Door"))&& followPlayer == false)
         {
 
             presetDirection *= -1;
