@@ -80,7 +80,7 @@ public class Enemy : Entity
     void CreatePotions(){
         int randVal = Random.Range(1, 11);
         if(randVal < maxHealth){
-            GameObject temp = GameObject.Instantiate(potion, transform.position, Quaternion.identity);
+            GameObject temp = GameObject.Instantiate(potion, transform.position + new Vector3(-0.5f, 0f, 0f), Quaternion.identity);
         }
     }
 
