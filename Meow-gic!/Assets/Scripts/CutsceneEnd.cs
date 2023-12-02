@@ -19,8 +19,18 @@ public class CutsceneEnd : MonoBehaviour
 
     private void NextScene(VideoPlayer player)
     {
+        if(SceneManager.GetActiveScene().name == "OpeningCutscene")
+        {
 
-        SceneManager.LoadScene(2);
+            SceneManager.LoadScene(2);
+
+        }else if(SceneManager.GetActiveScene().name == "EndingCutscene")
+        {
+
+            SceneManager.LoadScene(0);
+
+        }
+        
 
     }
 
